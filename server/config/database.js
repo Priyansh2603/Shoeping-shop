@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 export const connectDB = async()=>{
     mongoose
-    .connect("mongodb://127.0.0.1:27017/razor", {
+    .connect("mongodb://127.0.0.1:27017/razor"||process.env.PORT, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })

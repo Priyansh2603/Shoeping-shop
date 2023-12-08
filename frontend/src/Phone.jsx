@@ -19,6 +19,7 @@ export default function Phone({ checkoutHandler }) {
             amount={element.price}
             rating={element.rating}
             Item_id={element.id}
+            left={element.items_left}
             checkoutHandler={checkoutHandler}
             // Adjusted width and height styles
             width="100%"

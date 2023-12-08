@@ -1,0 +1,10 @@
+.homeContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* Add more general styling for your home container */
+  }
+  
+  .brandName {
+    color: #3498db; /* Your brand color */
+  }

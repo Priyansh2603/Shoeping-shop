@@ -20,14 +20,15 @@ const Home = ({ checkoutHandler }) => {
   return (
     <div>
       {/* <Navbar /> */}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={6} p={6}>
-        {shoes.map((element) => (
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} bg="whatsapp.100" spacing={6} p={6}>
+        {shoes.map((element,i) => (
           <Card
-            key={element.id}
+            key={i}
+            Item_id={element.id}
             img={element.imageURL}
             name={element.name}
             brand={element.brand}
-            rating=""
+            rating={element.rating}
             amount={element.price}
             model={element.category}
             left={element.items_left}

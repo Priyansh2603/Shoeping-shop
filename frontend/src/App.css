@@ -1,8 +1,11 @@
+
 .link:hover {
     color: pink; 
     text-decoration: none;
     transform: scale(1.05) 
-}  
+} 
+/* Navbar.css */
+
 .link {
     text-decoration: none;
   }
@@ -28,33 +31,4 @@
       display: none;
     }
   }
-  /* Navbar.css */
-
-.link {
-    text-decoration: none;
-  }
-  
-  .menu-button {
-    display: none;
-  }
-  
-  @media (max-width: 768px) {
-    .link {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-    }
-  
-    .menu-button {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-    }
-  }
-  /* Navbar.css */
-
-
-  
   
