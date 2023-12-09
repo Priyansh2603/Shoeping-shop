@@ -40,22 +40,27 @@ const Navbar = () => {
   async function logout(){
       try{
         const sendCart = await axios.post("http://localhost:8000/cart/addcart",{cart,UserId:user,name});
+        console.log("Sent cart");
         if(sendCart){
           window.alert("Cart Added");
         }
       }catch(e){
         console.log(e)
       }
-      loggedIn(false,'',null);
+      loggedIn(false,'','');
       toast.info("You've been Logged Out!",{theme:"dark",autoClose:2000,position:"top-center"})
       document.title=`Shoeping`;
       history("/")
   }
   return (
     <Box bg="gray.800" py={3} >
-    <Flex align="center" px={8}>
-      <RLink to={''}><img style={{minwidth:"4.8vw",maxHeight:"4vw",marginRight:"1vw",marginLeft:"2vw"}} src={logo}/></RLink>
-      <Spacer style={{maxWidth:"1vw"}} />
+    <Flex
+        align="center"
+        className='flx'
+        direction={{  md: 'row' }} // Set the direction to column on small screens and row on medium and larger screens
+      >
+      <RLink to={''} ><img className='logo' src={logo}/></RLink>
+      <Spacer className='space' style={{maxWidth:"1vw"}} />
       <Link as="RLink" className="link"  color="whatsapp.100" mr={4}>
         <RLink className="link" to={''}>
       Home
@@ -67,7 +72,7 @@ const Navbar = () => {
         Electronics
         </RLink>
       </Link>
-      <Menu>
+      <Menu className="link">
         <MenuButton
           fontWeight="bold"
           colorScheme="teal"
@@ -77,7 +82,7 @@ const Navbar = () => {
           mr={2}
         >
           Categories
-          <ChevronDownIcon ml={1} />
+          <ChevronDownIcon className='dropdown' />
         </MenuButton>
         <MenuList bg="whatsapp.100" color="black" border="1px solid #e2e8f0">
           {/* ... (menu items) */}
@@ -92,17 +97,18 @@ const Navbar = () => {
           Clothing
         </RLink>
         </Link>
-      <Spacer style={{maxWidth:"60vw"}} />
+      <Spacer className='space2'  />
       {log?(<><p style={{color:"white",marginRight:"1vw"}}>Welcome {name} !</p> 
       <RLink to={'cart'}>
         {/* <ShoppingCartIcon style={{color:"white",minWidth:"4vw",minHeight:"6vh",marginRight:"1vw"}}/> */}
         <div style={{ position: 'relative', marginRight:"2vw"}}>
+        {/* <ShoppingCartIcon style={{color:"white",width:"2vw",height:"6vh"}}/> */}
       <FaShoppingCart size={30} color="white" mr="2vw" />
       {cart.length > 0 && (
         <span
           style={{
             position: 'absolute',
-            top: "-0.8vh",
+            top: "-0.6vh",
             fontSize:"0.8vw",
             right: "-1vh",
             height: cart.length > 9 ? "2.4vh" : "2.3vh",
@@ -124,18 +130,18 @@ const Navbar = () => {
     </div>
         </RLink>
       <RLink style={{marginRight:"1vw"}}>
-        <Button colorScheme="teal" variant="solid" onClick={logout} style={{minWidth:"6vw"}}>
+        <Button className='sign' colorScheme="teal" variant="solid" onClick={logout} style={{minWidth:"6vw"}}>
           Logout
-        </Button></RLink></>):(<><RLink to={'login'} style={{marginRight:"1vw"}}>
-        <Button colorScheme="teal" variant="solid" style={{minWidth:"6vw"}}>
+        </Button></RLink></>):(<div className='log'><RLink to={'login'} style={{marginRight:"1vw"}}>
+        <Button className='sign' colorScheme="teal" variant="solid" style={{minWidth:"6vw"}}>
           Login
         </Button>
       </RLink>
       <RLink to={'register'}>
-        <Button colorScheme='teal' variant="solid" style={{minWidth:"6vw"}}>
+        <Button className='sign' colorScheme='teal' variant="solid" style={{minWidth:"6vw"}}>
           Signup
         </Button>
-      </RLink></>)}
+      </RLink></div>)}
     </Flex>
   </Box>
 );

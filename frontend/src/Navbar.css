@@ -1,60 +1,77 @@
 .link:hover {
-    color: pink; 
-    text-decoration: none;
-    transform: scale(1.05) 
-}  
-.link {
-    text-decoration: none;
-  }
-  
-  @media (max-width: 768px) {
-    .link {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-    }
-  
-    .menu-button {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-    }
-  }
-  
-  @media (min-width: 769px) {
-    .menu-button {
-      display: none;
-    }
-  }
-  /* Navbar.css */
+  color: pink;
+  text-decoration: none;
+  transform: scale(1.05)
+}
 
 .link {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.logo {
+  max-height: 4.8vw;
+  max-width: 4vw;
+  margin-right: 1vw;
+  margin-left: 2vw;
+}
+.flx{
+  padding: 0px 8px;
+}
+.log{
+  display: flex;
+}
+.space2{
+  max-width: 54vw;
+}
+@media (max-width: 768px) {
+  .link {
+    display: block;
+    text-align: center;
+    font-size: 1.5vh;
+    height: 4px;
+    padding: 0;
+    width: 100%;
+    margin-left: 0.5px;
+    margin-right: 0px;
   }
-  
-  .menu-button {
+
+  .logo {
+    min-height: 5vh;
+    min-width: 5vh;
+    margin-right: 1vw;
+  }
+  .flx{
+    padding-left: 0;
+  }
+  .log{
+    flex-direction: column;
+  }
+  .space {
+    width: 0px;
+  }
+  .space2{
+    max-width: 2vw;
+  }
+  .css-onkibi{
     display: none;
   }
-  
-  @media (max-width: 768px) {
-    .link {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-    }
-  
-    .menu-button {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-    }
+  .sign{
+    font-size: 4px;
+    max-width:15vw;
+    max-height:3vh;
+    margin-bottom: 3px;
   }
-  /* Navbar.css */
+  .menu-button {
+    display: block;
+    text-align: center;
+    font-size: 1.5vh;
+    height: 3px;
+    padding: 0;
+    width: 100%;
+    margin-left: 0.5px;
+    margin-right: 0px;
+  }
+}
 
 
-  
-  
+/* Navbar.css */
