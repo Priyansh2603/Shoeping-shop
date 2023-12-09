@@ -10,18 +10,18 @@ const Paysuccess = () => {
   const [order_id, setOrder_id] = useState(null); // Initialize with an appropriate default value
   const [pay_id,setPay_id] = useState(null);
   const [user_id,setUser_id] = useState('');
-  console.log("Effect k bahar: ",user_id);
+  // console.log("Effect k bahar: ",user_id);
   async function findUser() {
     try {
       const res = await axios.post("http://localhost:8000/auth/getuser", { user_id });
-      console.log("Response:", res.data);
+      // console.log("Response:", res.data);
   
       if (!res.data) {
         loggedIn(false, '', '');
-        console.log("It must be false");
+        // console.log("It must be false");
       } else {
         loggedIn(true, res.data.name, res.data._id);
-        console.log("after pay ", res.data.name, " ", res.data._id);
+        // console.log("after pay ", res.data.name, " ", res.data._id);
       }
   
     } catch (error) {
@@ -37,13 +37,13 @@ const Paysuccess = () => {
     const userIdfromURL = searchParams.get('reference');
     const orderIdFromURL = searchParams.get('order_id');
     const payIdfromURL = searchParams.get('payment_id');
-    console.log("At start:",userIdfromURL);
+    // console.log("At start:",userIdfromURL);
     setOrder_id(orderIdFromURL);
     setPay_id(payIdfromURL);
     setUser_id(userIdfromURL); 
     findUser();
-    console.log('user_id:', user_id);
-    console.log('order_id:', orderIdFromURL);
+    // console.log('user_id:', user_id);
+    // console.log('order_id:', orderIdFromURL);
   },[user_id]);
 
   return (

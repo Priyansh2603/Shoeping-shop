@@ -51,7 +51,7 @@ export default function Register() {
       if (response.data.exist === "true") {
         toast.info("The Email is already registered!",{theme:"dark",autoClose:2000,position:"top-center"});
       } else if (response.data.exist === "false") {
-        console.log(response.data._doc._id);
+        // console.log(response.data._doc._id);
         loggedIn("true", name,response.data._doc._id);
         document.title=`Shoeping (${name})`
         history("/");

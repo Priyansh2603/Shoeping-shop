@@ -27,7 +27,7 @@ function App() {
     setName(usrnm);
     setUser(id);
     settingUserId(id);
-    console.log("LoggedIn ",check," ",usrnm);
+    // console.log("LoggedIn ",check," ",usrnm);
   }
   function settingUserId(id){
     setUserId(id.toString());
@@ -48,37 +48,37 @@ function App() {
     });
   }
   async function getCart(){
-    console.log("In get cart ",UserId)
+    // console.log("In get cart ",UserId)
     try{
       // const UserId = user.toString();
       const res = await axios.post("http://localhost:8000/cart/getcart",{UserId,name});
       if(res.data==="Not found"){
-        console.log("Not Found")
+        // console.log("Not Found")
         setCart([]);
         return;
       }
       const resCart = res.data.Items;
-      console.log("Response",resCart);
+      // console.log("Response",resCart);
       setCart(resCart);
     }
     catch(e){
-      console.log("Getting Cart Error ",e);
+      // console.log("Getting Cart Error ",e);
     }
   }
   useEffect(() => {
-    console.log("Cart updated:", cart);
+    // console.log("Cart updated:", cart);
   }, [cart]);
   useEffect(()=>{
-    console.log("Tried: ",name," ",login," ",UserId);
+    // console.log("Tried: ",name," ",login," ",UserId);
     getCart();
   },[name,user,login,UserId])
   const checkoutHandler=async(amount,model,Item_id) => {
-    console.log("From CheckoutHandler:",amount," ",model," ",Item_id)
+    // console.log("From CheckoutHandler:",amount," ",model," ",Item_id)
     const { data: {key} } = await axios.get("http://localhost:8000/api/getkey");
     const { data: {order} } = await axios.post("http://localhost:8000/api/checkout",{amount,model,Item_id,user});
     // console.log(data)
     // console.log(window)
-    console.log("Item_id:",Item_id)
+    // console.log("Item_id:",Item_id)
     const option = {
         key: key, // Enter the Key ID generated from the Dashboard
         amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise

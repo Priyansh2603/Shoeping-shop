@@ -42,7 +42,7 @@ export default function Login() {
   const history = useNavigate();
   async function submit(e){
     e.preventDefault();
-    console.log(email,password);
+    // console.log(email,password);
     try{
         const res = await axios.post("http://localhost:8000/auth/login", {
            email, password,
@@ -54,8 +54,8 @@ export default function Login() {
           if (res.data.email===email) {
             // Assuming the response structure is { email, name, ...otherUserData }
             const { name } = res.data;
-            console.log("from login",res.data._id)
-            console.log(res.data);
+            // console.log("from login",res.data._id)
+            // console.log(res.data);
             loggedIn(true,name,res.data._id);
             document.title=`Shoeping (${name})`
             history("/");

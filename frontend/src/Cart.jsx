@@ -12,7 +12,7 @@ export default function Cart({}) {
     const name = useContext(AppState).name;
     const [total,setTotal] = useState(0);
     async function OpenPay(){
-        console.log(total," ",name," ",user)
+        // console.log(total," ",name," ",user)
         checkoutHandler(total, name, user)
     }
     useEffect(()=>{

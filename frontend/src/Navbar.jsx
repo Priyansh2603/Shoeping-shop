@@ -40,12 +40,12 @@ const Navbar = () => {
   async function logout(){
       try{
         const sendCart = await axios.post("http://localhost:8000/cart/addcart",{cart,UserId:user,name});
-        console.log("Sent cart");
+        // console.log("Sent cart");
         if(sendCart){
           window.alert("Cart Added");
         }
       }catch(e){
-        console.log(e)
+        // console.log(e)
       }
       loggedIn(false,'','');
       toast.info("You've been Logged Out!",{theme:"dark",autoClose:2000,position:"top-center"})
