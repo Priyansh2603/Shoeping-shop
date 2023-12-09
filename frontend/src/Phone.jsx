@@ -8,7 +8,7 @@ export default function Phone({ checkoutHandler }) {
   return (
     <>
       {/* <Navbar /> */}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={6} p={6}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} bg="whatsapp.100" spacing={6} p={6}>
         {phone.map((element) => (
           <Card
             key={element.id}

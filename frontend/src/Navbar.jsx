@@ -98,12 +98,12 @@ const Navbar = () => {
         </RLink>
         </Link>
       <Spacer className='space2'  />
-      {log?(<><p style={{color:"white",marginRight:"1vw"}}>Welcome {name} !</p> 
+      {log?(<><p className='welcome'>Welcome {name}</p> 
       <RLink to={'cart'}>
         {/* <ShoppingCartIcon style={{color:"white",minWidth:"4vw",minHeight:"6vh",marginRight:"1vw"}}/> */}
         <div style={{ position: 'relative', marginRight:"2vw"}}>
         {/* <ShoppingCartIcon style={{color:"white",width:"2vw",height:"6vh"}}/> */}
-      <FaShoppingCart size={30} color="white" mr="2vw" />
+      <FaShoppingCart size={30} className='cart'  />
       {cart.length > 0 && (
         <span
           style={{

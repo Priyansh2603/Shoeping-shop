@@ -3,11 +3,17 @@
   text-decoration: none;
   transform: scale(1.05)
 }
-
+.cart{
+  color: white;
+  margin-right: 2vw;
+}
 .link {
   text-decoration: none;
 }
-
+.welcome{
+  color: White;
+  margin-right: 1vw;
+}
 .logo {
   max-height: 4.8vw;
   max-width: 4vw;
@@ -34,7 +40,11 @@
     margin-left: 0.5px;
     margin-right: 0px;
   }
-
+  .cart{
+    width: 3vw;
+    height: 2vh;
+    margin-right: 1vw;
+  }
   .logo {
     min-height: 5vh;
     min-width: 5vh;
@@ -54,6 +64,9 @@
   }
   .css-onkibi{
     display: none;
+  }
+  .welcome{
+    font-size: 1vh;
   }
   .sign{
     font-size: 4px;

@@ -14,8 +14,11 @@
     .link {
       display: block;
       text-align: center;
-      padding: 10px;
-      width: 100%;
+      font-size: 1vh;
+      height: 4px;
+      padding: 0;
+    width: 100%;
+    margin: 1vw;
     }
   
     .menu-button {
