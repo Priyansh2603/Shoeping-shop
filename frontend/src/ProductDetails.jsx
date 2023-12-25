@@ -29,7 +29,6 @@ const StyledProductImage = styled('img')({
   maxWidth: '100%',
   maxHeight: 400,
   transition: 'transform 0.3s ease-in-out',
-  position: 'absolute',
   top: 0,
   left: 0,
   zIndex: 0,
