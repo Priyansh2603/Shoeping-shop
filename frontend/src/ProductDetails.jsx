@@ -99,7 +99,7 @@ const ProductDetails = ({ product }) => {
           <button onClick={goBack}  style={{color:'black'}}><ArrowBackIcon/></button>
           <Grid container spacing={3}>
             
-              <Grid item xs={12} md={5} mt={4} ml={3} component={StyledImageContainer}>
+              <Grid item xs={12} md={5} mt={4} ml={1} component={StyledImageContainer}>
                 <StyledProductImage src={thumbnail?thumbnail:(category.image?images[0]:image)} alt={title && title} />
             </Grid>
             <Grid item xs={12} md={6}>
