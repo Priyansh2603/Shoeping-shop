@@ -26,6 +26,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "./Navbar.css" 
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const Navbar = () => {
   const history = useNavigate();
   const login = useContext(AppState).login;
@@ -47,7 +48,7 @@ const Navbar = () => {
       }catch(e){
         // console.log(e)
       }
-      loggedIn(false,'','');
+      loggedIn(false,'','',{});
       toast.info("You've been Logged Out!",{theme:"dark",autoClose:2000,position:"top-center"})
       document.title=`Shoeping`;
       history("/")
@@ -67,9 +68,8 @@ const Navbar = () => {
         </RLink>
         </Link>
       <Link as="RLink" className="link"  color="whatsapp.100" mr={4}>
-        <RLink className="link" to={'phone'}>
-
-        Electronics
+        <RLink className="link" to={''}>
+        About
         </RLink>
       </Link>
       <Menu className="link">
@@ -86,15 +86,15 @@ const Navbar = () => {
         </MenuButton>
         <MenuList bg="whatsapp.100" color="black" border="1px solid #e2e8f0">
           {/* ... (menu items) */}
-          <MenuItem bg="whatsapp.100" color="black"  >First</MenuItem>
-          <MenuItem bg="whatsapp.100" color="black" >First</MenuItem>
-          <MenuItem bg="whatsapp.100" color="black" >First</MenuItem>
-          <MenuItem bg="whatsapp.100" color="black" >First</MenuItem>
+          <RLink className='menu' to={'footwear'}><MenuItem bg="whatsapp.100" color="black"  >FootWear</MenuItem></RLink>
+          <RLink  className='menu'  to={'phone'}><MenuItem bg="whatsapp.100" color="black"  >Electronics</MenuItem></RLink>
+          <RLink  className='menu' to={'shirt'}><MenuItem bg="whatsapp.100" color="black"  >Clothing</MenuItem></RLink>
+          <RLink  className='menu' to={'grooming'}><MenuItem bg="whatsapp.100" color="black"  >Grooming</MenuItem></RLink>
         </MenuList>
       </Menu>
       <Link as="RLink" className="link"  color="whatsapp.100" mr={4}>
-        <RLink className="link" to={'shirt'}>
-          Clothing
+        <RLink className="link" to={''}>
+          Our Services
         </RLink>
         </Link>
       <Spacer className='space2'  />
@@ -129,9 +129,10 @@ const Navbar = () => {
       )}
     </div>
         </RLink>
-      <RLink style={{marginRight:"1vw"}}>
-        <Button className='sign' colorScheme="teal" variant="solid" onClick={logout} style={{minWidth:"6vw"}}>
-          Logout
+      <RLink to={'profile'} style={{marginRight:"1vw"}}>
+        <Button className='sign' colorScheme="teal" variant="solid" style={{minWidth:"6vw"}}>
+        <AccountCircleIcon style={{marginRight:"0.25rem"}}/>
+          Profile
         </Button></RLink></>):(<div className='log'><RLink to={'login'} style={{marginRight:"1vw"}}>
         <Button className='sign' colorScheme="teal" variant="solid" style={{minWidth:"6vw"}}>
           Login

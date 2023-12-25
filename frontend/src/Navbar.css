@@ -1,11 +1,14 @@
 .link:hover {
   color: pink;
   text-decoration: none;
-  transform: scale(1.05)
+  /* transform: scale(1.05) */
+}
+MenuButton:hover{
+  text-decoration: none;
 }
 .cart{
   color: white;
-  margin-right: 2vw;
+  /* margin-right: 2vw; */
 }
 .link {
   text-decoration: none;
@@ -43,7 +46,7 @@
   .cart{
     width: 3vw;
     height: 2vh;
-    margin-right: 1vw;
+    /* margin-right: 1vw; */
   }
   .logo {
     min-height: 5vh;
@@ -85,6 +88,16 @@
     margin-right: 0px;
   }
 }
-
-
+.menu{
+  color:black;
+  background-color: transparent;
+}
+.menu:hover{
+  text-decoration: none;
+  color: black;
+  background-color: aquamarine;
+}
+.menu-button{
+  text-decoration: none;
+}
 /* Navbar.css */

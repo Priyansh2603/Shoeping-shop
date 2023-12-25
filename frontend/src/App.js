@@ -15,25 +15,37 @@ import 'react-toastify/dist/ReactToastify.css';
 import { createContext, useEffect, useState } from 'react';
 import Cart from './Cart.jsx'
 import Error from './Error.jsx'
+import ProfilePage from './profile/ProfilePage.jsx';
+import GeneralView from './profile/GeneralView.jsx';
+import AccountInformation from './profile/AccountInformation.jsx';
+import OrderHistory from './profile/OrderHistory.jsx';
+import ContactInformation from './profile/ContactInformation.jsx';
+import Wishlist from './profile/Wishlist.jsx';
+import Groom from './Groom.jsx';
+import Footwear from './Footwear.jsx';
+import ProductDetails from './ProductDetails.jsx';
 const AppState = createContext();
 function App() {
+  const [userdetails,setUserdetails] = useState({});
   const [login,setLogin] = useState(false);
   const [user,setUser] = useState(null);
   const [name,setName] = useState('');
   const [cart,setCart] = useState([]);
   const [UserId,setUserId] = useState('');
-  function loggedIn(check,usrnm,id){
+  const [item,setItem] = useState({});
+  function loggedIn(check,usrnm,id,details){
     setLogin(check);
     setName(usrnm);
     setUser(id);
     settingUserId(id);
-    // console.log("LoggedIn ",check," ",usrnm);
+    setUserdetails(details);
+    console.log("LoggedIn ",cart);
   }
   function settingUserId(id){
     setUserId(id.toString());
   }
-  function logout(check,user,id){
-    loggedIn(check,user,id);
+  function logout(check,user,id,details){
+    loggedIn(check,user,id,details);
     setUser(id);
     setUserId(user);
     setCart([]);
@@ -43,7 +55,7 @@ function App() {
   }
   function removeCartItem(Item_id) {
     setCart((prevCart) => {
-      const updatedCart = prevCart.filter((item) => item.Item_id !== Item_id);
+      const updatedCart = prevCart.filter((item) => item.id !== Item_id);
       return updatedCart;
     });
   }
@@ -67,7 +79,8 @@ function App() {
   }
   useEffect(() => {
     // console.log("Cart updated:", cart);
-  }, [cart]);
+    console.log(item);
+  }, [item]);
   useEffect(()=>{
     // console.log("Tried: ",name," ",login," ",UserId);
     getCart();
@@ -109,7 +122,7 @@ function App() {
     }
   return (
     <>
-    <AppState.Provider value={{login, loggedIn,checkoutHandler, logout,user, name,setUser,setName,cart,setCart,addingCart,removeCartItem}}>
+    <AppState.Provider value={{login,setItem, loggedIn,userdetails,checkoutHandler, logout,user, name,setUser,setName,cart,setCart,addingCart,removeCartItem}}>
      <Router>
       <ToastContainer/>
     <Navbar/>
@@ -118,11 +131,19 @@ function App() {
         <Route path="/" element={<Home checkoutHandler= {checkoutHandler}/>} />
         <Route path="/shirt" element = {<Shirt checkoutHandler = {checkoutHandler}/>}/>
         <Route path="/phone" element = {<Phone checkoutHandler = {checkoutHandler}/>}/>
+        <Route path="/grooming" element = {<Groom checkoutHandler = {checkoutHandler}/>}/>
+        <Route path="/footwear" element = {<Footwear checkoutHandler = {checkoutHandler}/>}/>
+        <Route path="/:type/itemview" element = {<ProductDetails product={item}/>}/>
         <Route path="/register" element = {<Register/>}/>
         <Route path="/login" element = {<Login/>}/>
         <Route path="/pay" element={<Paysuccess/>}/>
         {login?<Route path="/cart" element={<Cart/>}/>:<Route path="/cart" element={<Error/>} />}
+        {login?<Route path="/profile" element={<ProfilePage/>}/>:<Route path="/cart" element={<Error/>} />}
         <Route path="*" element={<Error />} />
+        <Route path="/profile/accountinfo" element={<AccountInformation/>}/>
+        <Route path="/profile/orders" element={<OrderHistory/>}/>
+        <Route path="/profile/contactInfo" element={<ContactInformation/>}/>
+        <Route path="/profile/wishlist" element={<Wishlist/>}/>
       </Routes>
     </div>
      </Router>

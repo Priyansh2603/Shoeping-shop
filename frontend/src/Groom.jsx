@@ -1,28 +1,26 @@
 import React from 'react';
-import phone from './phone.json';
+import groom from './grooming.json'
 import { SimpleGrid,Text,VStack } from '@chakra-ui/react';
 import Card from './Card';
-export default function Phone({ checkoutHandler }) {
-  return (
-    <>
-      {/* <Navbar /> */}
-      <VStack h="10vh" justifyContent="center" alignItems="center" backgroundColor="whatsapp.500" >
+export default function Groom({checkoutHandler}) {
+  return (<>    
+  <VStack h="10vh" justifyContent="center" alignItems="center" backgroundColor="whatsapp.500" >
     <Text textColor="blackAlpha" textTransform="uppercase" fontSize="25px" fontWeight="bold">
-      Be Upgraded!
+      Style you and your place!
     </Text>
   </VStack>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 5 }} backgroundColor="whatsapp.100" spacing={6} p={6}>
-        {phone.map((element) => (
+    <SimpleGrid columns={{ sm: 1, md: 2, lg: 5 }} bg="whatsapp.100" spacing={6} p={6}>
+        {groom.map((element) => (
           <Card
-          item={element}
-            type="phone"
             key={element.id}
-            img={element.thumbnail?element.thumbnail:element.images[0]}
+            item={element}
+            type="grooming"
+            img={element.thumbnail}
             name={element.category} 
             brand={element.title}
             model={element.brand}
             amount={element.price}
-            rating={element.rating?(element.rating.rate?element.rating.rate:element.rating):3.8}
+            rating={element.rating.rate?element.rating.rate:element.rating}
             Item_id={element.id}
             left={element.items_left}
             checkoutHandler={checkoutHandler}
@@ -38,6 +36,6 @@ export default function Phone({ checkoutHandler }) {
           />
         ))}
       </SimpleGrid>
-    </>
-  );
+      </>
+  )
 }

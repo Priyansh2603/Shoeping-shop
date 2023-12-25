@@ -21,7 +21,7 @@
     {
         "id": 46999,
         "title": "iPhone X",
-        "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+        "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with a modern camera",
         "price": 899,
         "discountPercentage": 17.94,
         "rating": 4.44,
@@ -69,6 +69,205 @@
             "https://i.dummyjson.com/data/products/4/4.jpg",
             "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
         ]
+    },{
+        "id": 18,
+        "title": "Ergonomic Metal Shoes",
+        "price": 597,
+        "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+        "images": [
+            "https://i.imgur.com/ZANVnHE.jpeg",
+            "https://i.imgur.com/Ro5z6Tn.jpeg",
+            "https://i.imgur.com/woA93Li.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 19,
+        "title": "Intelligent Steel Soap",
+        "price": 293,
+        "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+        "images": [
+            "https://i.imgur.com/yVeIeDa.jpeg",
+            "https://i.imgur.com/jByJ4ih.jpeg",
+            "https://i.imgur.com/KXj6Tpb.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 20,
+        "title": "Elegant Granite Bike",
+        "price": 40,
+        "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+        "images": [
+            "https://i.imgur.com/SolkFEB.jpeg",
+            "https://i.imgur.com/KIGW49u.jpeg",
+            "https://i.imgur.com/mWwek7p.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 21,
+        "title": "Intelligent Wooden Chips",
+        "price": 555,
+        "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+        "images": [
+            "https://i.imgur.com/keVCVIa.jpeg",
+            "https://i.imgur.com/afHY7v2.jpeg",
+            "https://i.imgur.com/yAOihUe.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 22,
+        "title": "Elegant Bronze Chair",
+        "price": 219,
+        "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+        "images": [
+            "https://i.imgur.com/w3Y8NwQ.jpeg",
+            "https://i.imgur.com/WJFOGIC.jpeg",
+            "https://i.imgur.com/dV4Nklf.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 23,
+        "title": "Modern Fresh Cheese",
+        "price": 938,
+        "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+        "images": [
+            "https://i.imgur.com/OKn1KFI.jpeg",
+            "https://i.imgur.com/G4f21Ai.jpeg",
+            "https://i.imgur.com/Z9oKRVJ.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 24,
+        "title": "Tasty Metal Salad",
+        "price": 556,
+        "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+        "images": [
+            "https://i.imgur.com/ItHcq7o.jpeg",
+            "https://i.imgur.com/55GM3XZ.jpeg",
+            "https://i.imgur.com/tcNJxoW.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 25,
+        "title": "Handcrafted Bronze Gloves",
+        "price": 752,
+        "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+        "images": [
+            "https://i.imgur.com/YaSqa06.jpeg",
+            "https://i.imgur.com/isQAliJ.jpeg",
+            "https://i.imgur.com/5B8UQfh.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 26,
+        "title": "Elegant Steel Table",
+        "price": 953,
+        "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+        "images": [
+            "https://i.imgur.com/yb9UQKL.jpeg",
+            "https://i.imgur.com/m2owtQG.jpeg",
+            "https://i.imgur.com/bNiORct.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
+    },
+    {
+        "id": 27,
+        "title": "Electronic Metal Bacon",
+        "price": 140,
+        "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+        "images": [
+            "https://i.imgur.com/LGk9Jn2.jpeg",
+            "https://i.imgur.com/1ttYWaI.jpeg",
+            "https://i.imgur.com/sPRWnJH.jpeg"
+        ],
+        "creationAt": "2023-12-24T10:24:11.000Z",
+        "updatedAt": "2023-12-24T10:24:11.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-24T10:24:11.000Z",
+            "updatedAt": "2023-12-24T10:24:11.000Z"
+        }
     },
     {
         "id": 56561,
@@ -180,375 +379,75 @@
         ]
     },
     {
+        "id": 9,
+        "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+        "price": 64,
+        "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+        "category": "electronics",
+        "thumbnail": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+        "rating": {
+            "rate": 3.3,
+            "count": 203
+        }
+    },
+    {
+        "id": 10,
+        "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+        "price": 109,
+        "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+        "category": "electronics",
+        "thumbnail": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+        "rating": {
+            "rate": 2.9,
+            "count": 470
+        }
+    },
+    {
         "id": 11,
-        "title": "perfume Oil",
-        "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
-        "price": 13,
-        "discountPercentage": 8.4,
-        "rating": 4.26,
-        "stock": 65,
-        "brand": "Impression of Acqua Di Gio",
-        "category": "fragrances",
-        "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/11/1.jpg",
-            "https://i.dummyjson.com/data/products/11/2.jpg",
-            "https://i.dummyjson.com/data/products/11/3.jpg",
-            "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
-        ]
+        "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+        "price": 109,
+        "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+        "category": "electronics",
+        "thumbnail": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+        "rating": {
+            "rate": 4.8,
+            "count": 319
+        }
     },
     {
-        "id": 25600,
-        "title": "Brown Perfume",
-        "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
-        "price": 40,
-        "discountPercentage": 15.66,
-        "rating": 4,
-        "stock": 52,
-        "brand": "Royal_Mirage",
-        "category": "fragrances",
-        "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/12/1.jpg",
-            "https://i.dummyjson.com/data/products/12/2.jpg",
-            "https://i.dummyjson.com/data/products/12/3.png",
-            "https://i.dummyjson.com/data/products/12/4.jpg",
-            "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
-        ]
+        "id": 12,
+        "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+        "price": 114,
+        "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+        "category": "electronics",
+        "thumbnail": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+        "rating": {
+            "rate": 4.8,
+            "count": 400
+        }
     },
     {
-        "id": 25600,
-        "title": "Fog Scent Xpressio Perfume",
-        "description": "Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men",
-        "price": 13,
-        "discountPercentage": 8.14,
-        "rating": 4.59,
-        "stock": 61,
-        "brand": "Fog Scent Xpressio",
-        "category": "fragrances",
-        "thumbnail": "https://i.dummyjson.com/data/products/13/thumbnail.webp",
-        "images": [
-            "https://i.dummyjson.com/data/products/13/1.jpg",
-            "https://i.dummyjson.com/data/products/13/2.png",
-            "https://i.dummyjson.com/data/products/13/3.jpg",
-            "https://i.dummyjson.com/data/products/13/4.jpg",
-            "https://i.dummyjson.com/data/products/13/thumbnail.webp"
-        ]
+        "id": 13,
+        "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+        "price": 599,
+        "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+        "category": "electronics",
+        "thumbnail": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+        "rating": {
+            "rate": 2.9,
+            "count": 250
+        }
     },
     {
-        "id": 34960,
-        "title": "Non-Alcoholic Concentrated Perfume Oil",
-        "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
-        "price": 120,
-        "discountPercentage": 15.6,
-        "rating": 4.21,
-        "stock": 114,
-        "brand": "Al Munakh",
-        "category": "fragrances",
-        "thumbnail": "https://i.dummyjson.com/data/products/14/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/14/1.jpg",
-            "https://i.dummyjson.com/data/products/14/2.jpg",
-            "https://i.dummyjson.com/data/products/14/3.jpg",
-            "https://i.dummyjson.com/data/products/14/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 39660,
-        "title": "Eau De Perfume Spray",
-        "description": "Genuine  Al-Rehab spray perfume from UAE/Saudi Arabia/Yemen High Quality",
-        "price": 30,
-        "discountPercentage": 10.99,
-        "rating": 4.7,
-        "stock": 105,
-        "brand": "Lord - Al-Rehab",
-        "category": "fragrances",
-        "thumbnail": "https://i.dummyjson.com/data/products/15/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/15/1.jpg",
-            "https://i.dummyjson.com/data/products/15/2.jpg",
-            "https://i.dummyjson.com/data/products/15/3.jpg",
-            "https://i.dummyjson.com/data/products/15/4.jpg",
-            "https://i.dummyjson.com/data/products/15/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 49999,
-        "title": "Hyaluronic Acid Serum",
-        "description": "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
-        "price": 19,
-        "discountPercentage": 13.31,
-        "rating": 4.83,
-        "stock": 110,
-        "brand": "L'Oreal Paris",
-        "category": "skincare",
-        "thumbnail": "https://i.dummyjson.com/data/products/16/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/16/1.png",
-            "https://i.dummyjson.com/data/products/16/2.webp",
-            "https://i.dummyjson.com/data/products/16/3.jpg",
-            "https://i.dummyjson.com/data/products/16/4.jpg",
-            "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 49999,
-        "title": "Tree Oil 30ml",
-        "description": "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
-        "price": 12,
-        "discountPercentage": 4.09,
-        "rating": 4.52,
-        "stock": 78,
-        "brand": "Hemani Tea",
-        "category": "skincare",
-        "thumbnail": "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/17/1.jpg",
-            "https://i.dummyjson.com/data/products/17/2.jpg",
-            "https://i.dummyjson.com/data/products/17/3.jpg",
-            "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 19999,
-        "title": "Oil Free Moisturizer 100ml",
-        "description": "Dermive Oil Free Moisturizer with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.",
-        "price": 40,
-        "discountPercentage": 13.1,
-        "rating": 4.56,
-        "stock": 88,
-        "brand": "Dermive",
-        "category": "skincare",
-        "thumbnail": "https://i.dummyjson.com/data/products/18/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/18/1.jpg",
-            "https://i.dummyjson.com/data/products/18/2.jpg",
-            "https://i.dummyjson.com/data/products/18/3.jpg",
-            "https://i.dummyjson.com/data/products/18/4.jpg",
-            "https://i.dummyjson.com/data/products/18/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 79999,
-        "title": "Skin Beauty Serum.",
-        "description": "Product name: rorec collagen hyaluronic acid white face serum riceNet weight: 15 m",
-        "price": 46,
-        "discountPercentage": 10.68,
-        "rating": 4.42,
-        "stock": 54,
-        "brand": "ROREC White Rice",
-        "category": "skincare",
-        "thumbnail": "https://i.dummyjson.com/data/products/19/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/19/1.jpg",
-            "https://i.dummyjson.com/data/products/19/2.jpg",
-            "https://i.dummyjson.com/data/products/19/3.png",
-            "https://i.dummyjson.com/data/products/19/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 59990,
-        "title": "Freckle Treatment Cream- 15gm",
-        "description": "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
-        "price": 70,
-        "discountPercentage": 16.99,
-        "rating": 4.06,
-        "stock": 140,
-        "brand": "Fair & Clear",
-        "category": "skincare",
-        "thumbnail": "https://i.dummyjson.com/data/products/20/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/20/1.jpg",
-            "https://i.dummyjson.com/data/products/20/2.jpg",
-            "https://i.dummyjson.com/data/products/20/3.jpg",
-            "https://i.dummyjson.com/data/products/20/4.jpg",
-            "https://i.dummyjson.com/data/products/20/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 62999,
-        "title": "- Daal Masoor 500 grams",
-        "description": "Fine quality Branded Product Keep in a cool and dry place",
-        "price": 20,
-        "discountPercentage": 4.81,
-        "rating": 4.44,
-        "stock": 133,
-        "brand": "Saaf & Khaas",
-        "category": "groceries",
-        "thumbnail": "https://i.dummyjson.com/data/products/21/thumbnail.png",
-        "images": [
-            "https://i.dummyjson.com/data/products/21/1.png",
-            "https://i.dummyjson.com/data/products/21/2.jpg",
-            "https://i.dummyjson.com/data/products/21/3.jpg"
-        ]
-    },
-    {
-        "id": 52999,
-        "title": "Elbow Macaroni - 400 gm",
-        "description": "Product details of Bake Parlor Big Elbow Macaroni - 400 gm",
-        "price": 14,
-        "discountPercentage": 15.58,
-        "rating": 4.57,
-        "stock": 146,
-        "brand": "Bake Parlor Big",
-        "category": "groceries",
-        "thumbnail": "https://i.dummyjson.com/data/products/22/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/22/1.jpg",
-            "https://i.dummyjson.com/data/products/22/2.jpg",
-            "https://i.dummyjson.com/data/products/22/3.jpg"
-        ]
-    },
-    {
-        "id": 25600999,
-        "title": "Orange Essence Food Flavou",
-        "description": "Specifications of Orange Essence Food Flavour For Cakes and Baking Food Item",
-        "price": 14,
-        "discountPercentage": 8.04,
-        "rating": 4.85,
-        "stock": 26,
-        "brand": "Baking Food Items",
-        "category": "groceries",
-        "thumbnail": "https://i.dummyjson.com/data/products/23/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/23/1.jpg",
-            "https://i.dummyjson.com/data/products/23/2.jpg",
-            "https://i.dummyjson.com/data/products/23/3.jpg",
-            "https://i.dummyjson.com/data/products/23/4.jpg",
-            "https://i.dummyjson.com/data/products/23/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 72000,
-        "title": "cereals muesli fruit nuts",
-        "description": "original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji",
-        "price": 46,
-        "discountPercentage": 16.8,
-        "rating": 4.94,
-        "stock": 113,
-        "brand": "fauji",
-        "category": "groceries",
-        "thumbnail": "https://i.dummyjson.com/data/products/24/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/24/1.jpg",
-            "https://i.dummyjson.com/data/products/24/2.jpg",
-            "https://i.dummyjson.com/data/products/24/3.jpg",
-            "https://i.dummyjson.com/data/products/24/4.jpg",
-            "https://i.dummyjson.com/data/products/24/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 18999,
-        "title": "Gulab Powder 50 Gram",
-        "description": "Dry Rose Flower Powder Gulab Powder 50 Gram • Treats Wounds",
-        "price": 70,
-        "discountPercentage": 13.58,
-        "rating": 4.87,
-        "stock": 47,
-        "brand": "Dry Rose",
-        "category": "groceries",
-        "thumbnail": "https://i.dummyjson.com/data/products/25/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/25/1.png",
-            "https://i.dummyjson.com/data/products/25/2.jpg",
-            "https://i.dummyjson.com/data/products/25/3.png",
-            "https://i.dummyjson.com/data/products/25/4.jpg",
-            "https://i.dummyjson.com/data/products/25/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 22299,
-        "title": "Plant Hanger For Home",
-        "description": "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
-        "price": 41,
-        "discountPercentage": 17.86,
-        "rating": 4.08,
-        "stock": 131,
-        "brand": "Boho Decor",
-        "category": "home-decoration",
-        "thumbnail": "https://i.dummyjson.com/data/products/26/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/26/1.jpg",
-            "https://i.dummyjson.com/data/products/26/2.jpg",
-            "https://i.dummyjson.com/data/products/26/3.jpg",
-            "https://i.dummyjson.com/data/products/26/4.jpg",
-            "https://i.dummyjson.com/data/products/26/5.jpg",
-            "https://i.dummyjson.com/data/products/26/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 27699,
-        "title": "Flying Wooden Bird",
-        "description": "Package Include 6 Birds with Adhesive Tape Shape: 3D Shaped Wooden Birds Material: Wooden MDF, Laminated 3.5mm",
-        "price": 51,
-        "discountPercentage": 15.58,
-        "rating": 4.41,
-        "stock": 17,
-        "brand": "Flying Wooden",
-        "category": "home-decoration",
-        "thumbnail": "https://i.dummyjson.com/data/products/27/thumbnail.webp",
-        "images": [
-            "https://i.dummyjson.com/data/products/27/1.jpg",
-            "https://i.dummyjson.com/data/products/27/2.jpg",
-            "https://i.dummyjson.com/data/products/27/3.jpg",
-            "https://i.dummyjson.com/data/products/27/4.jpg",
-            "https://i.dummyjson.com/data/products/27/thumbnail.webp"
-        ]
-    },
-    {
-        "id": 27199,
-        "title": "3D Embellishment Art Lamp",
-        "description": "3D led lamp sticker Wall sticker 3d wall art light on/off button  cell operated (included)",
-        "price": 20,
-        "discountPercentage": 16.49,
-        "rating": 4.82,
-        "stock": 54,
-        "brand": "LED Lights",
-        "category": "home-decoration",
-        "thumbnail": "https://i.dummyjson.com/data/products/28/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/28/1.jpg",
-            "https://i.dummyjson.com/data/products/28/2.jpg",
-            "https://i.dummyjson.com/data/products/28/3.png",
-            "https://i.dummyjson.com/data/products/28/4.jpg",
-            "https://i.dummyjson.com/data/products/28/thumbnail.jpg"
-        ]
-    },
-    {
-        "id": 35799,
-        "title": "Handcraft Chinese style",
-        "description": "Handcraft Chinese style art luxury palace hotel villa mansion home decor ceramic vase with brass fruit plate",
-        "price": 60,
-        "discountPercentage": 15.34,
-        "rating": 4.44,
-        "stock": 7,
-        "brand": "luxury palace",
-        "category": "home-decoration",
-        "thumbnail": "https://i.dummyjson.com/data/products/29/thumbnail.webp",
-        "images": [
-            "https://i.dummyjson.com/data/products/29/1.jpg",
-            "https://i.dummyjson.com/data/products/29/2.jpg",
-            "https://i.dummyjson.com/data/products/29/3.webp",
-            "https://i.dummyjson.com/data/products/29/4.webp",
-            "https://i.dummyjson.com/data/products/29/thumbnail.webp"
-        ]
-    },
-    {
-        "id": 36000,
-        "title": "Key Holder",
-        "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
-        "price": 30,
-        "discountPercentage": 2.92,
-        "rating": 4.92,
-        "stock": 54,
-        "brand": "Golden",
-        "category": "home-decoration",
-        "thumbnail": "https://i.dummyjson.com/data/products/30/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/30/1.jpg",
-            "https://i.dummyjson.com/data/products/30/2.jpg",
-            "https://i.dummyjson.com/data/products/30/3.jpg",
-            "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
-        ]
+        "id": 14,
+        "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+        "price": 1999,
+        "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+        "category": "electronics",
+        "thumbnail": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+        "rating": {
+            "rate": 2.2,
+            "count": 140
+        }
     }
 ]

@@ -5,15 +5,22 @@ export const cartUpdate = async (req, res) => {
         console.log("Here");
     
         const { cart, UserId, name } = req.body;
+        console.log(cart);
         const itemsToAdd = cart.map(item => ({
-            Item_id: item.Item_id,
+            Item_id: item.id,
             name: item.name,
             model: item.model,
-            img: item.img,
-            amount: item.amount,
-            rating: item.rating,
+            image: item.image?(item.image):(item.thumbnail),
+            price: item.price,
+            rating: (item.rating)?(item.rating.rate?item.rating.rate:item.rating):2,
             brand: item.brand,
-            quantity: item.quantity,
+            description: item.description,
+            category: item.category,
+            title: item.title,
+            discountPercentage: item.discountPercentage,
+            left: item.left,
+            stock: item.stock,
+            images: item.images,
         }));
     
         const itemIdsToAdd = itemsToAdd.map(item => item.Item_id);
@@ -95,28 +102,10 @@ export const getCart = async (req, res) => {
     }
 };
 
-// const uniqueItemsToAdd = []
-// const existId = [];
-// updatedCart.Items.map(element => {
-//     existId.push(Number(element.Item_id));
-// });
-// console.log("Exist Id :",existId)
-// itemsToAdd.map(element=>{
-//     if(existId.indexOf(element.Item_id)==-1){
-//         console.log(element.Item_id)
-//         uniqueItemsToAdd.push(element);
-//     }
-// })
-// console.log(uniqueItemsToAdd);
-// if (uniqueItemsToAdd.length > 0) {
-//     updatedCart.Items.push(uniqueItemsToAdd);
-//     updatedCart.Username = name;
-
-//     const savedCart = await updatedCart.save();
-
-//     console.log("Updated cart:", savedCart);
-//     return res.json(savedCart);
-// } else {
-//     console.log("No new items added.");
-//     return res.json(updatedCart);
-// }
+export const deleteCart = async(UserId)=>{
+    const findCart = await Cart.findOne({ UserId: UserId });
+    if(findCart==null) return;
+    const cartId = findCart._id;
+    const res = await Cart.findByIdAndDelete(cartId);
+    console.log("Deleted Cart ",res);
+}

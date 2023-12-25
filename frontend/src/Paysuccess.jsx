@@ -20,7 +20,7 @@ const Paysuccess = () => {
         loggedIn(false, '', '');
         // console.log("It must be false");
       } else {
-        loggedIn(true, res.data.name, res.data._id);
+        loggedIn(true, res.data.name, res.data._id,res.data);
         // console.log("after pay ", res.data.name, " ", res.data._id);
       }
   
@@ -28,7 +28,7 @@ const Paysuccess = () => {
       // Handle error (e.g., network error, server error)
       console.error("Error fetching user:", error.message);
       // Optionally, handle the error by calling loggedIn with appropriate parameters
-      loggedIn(false, '', '');
+      loggedIn(false, '', '',{});
     }
   }
   

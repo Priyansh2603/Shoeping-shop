@@ -56,7 +56,7 @@ export default function Login() {
             const { name } = res.data;
             // console.log("from login",res.data._id)
             // console.log(res.data);
-            loggedIn(true,name,res.data._id);
+            loggedIn(true,name,res.data._id,res.data);
             document.title=`Shoeping (${name})`
             history("/");
             toast.success(`Logged in Successfully as ${name}`,{theme:"dark",autoClose:2000,position:"top-center"});

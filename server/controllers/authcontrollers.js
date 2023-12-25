@@ -73,10 +73,23 @@ export const authRegister = async(req,res)=>{
 }
 export const getUser = async(req,res)=>{
     const {user_id} = req.body;
-    console.log("user_id:",user_id)
+    console.log("in getuser user_id:",user_id)
     if(mongoose.Types.ObjectId.isValid(user_id)){
         const user = await Auth.findById(user_id);
         res.json(user);
+    }
+    else{
+        res.send("false")
+    }
+}
+export const updateUser = async(req,res)=>{
+    console.log("body ",req.body);
+    const {userId} = req.body;
+    const updatedData = req.body;
+    console.log("In update user_id:",userId)
+    if(mongoose.Types.ObjectId.isValid(userId)){
+        const newuser = await Auth.findByIdAndUpdate(userId,updatedData,{new:true});
+        res.json(newuser)
     }
     else{
         res.send("false")

@@ -6,17 +6,15 @@ const cartItemSchema = new mongoose.Schema({
     },
     name:{
         type: String,
-        required: true,
     },
     model:{
         type: String,
-        required: true,
     },
-    img:{
+    image:{
         type: String,
         required: true,
     },
-    amount:{
+    price:{
         type: Number,
         required: true,
     },
@@ -25,6 +23,27 @@ const cartItemSchema = new mongoose.Schema({
     },
     brand:{
         type: String,
+    },
+    description:{
+        type: String,
+    },
+    title:{
+        type: String,
+    },
+    category:{
+        type: String,
+    },
+    discountPercentage:{
+        type: Number,
+    },
+    left:{
+        type: Number,
+    },
+    stock:{
+        type: Number,
+    },
+    images:{
+        type: [String],
     },
     quantity: { type: Number, default: 1 },
 })

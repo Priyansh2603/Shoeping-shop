@@ -1,38 +1,36 @@
-import React from 'react';
-import shirt from './shirt.json';
+import React from 'react'
 import { SimpleGrid,Text,VStack } from '@chakra-ui/react';
+import shoes from './shoes.json';
 import Card from './Card';
-import Navbar from './Navbar';
-
-export default function Shirt({ checkoutHandler }) {
+export default function Footwear({checkoutHandler}) {
   return (
     <div>
       {/* <Navbar /> */}
       <VStack h="10vh" justifyContent="center" alignItems="center" backgroundColor="whatsapp.500" >
         <Text textColor="blackAlpha" textTransform="uppercase" fontSize="25px" fontWeight="bold">
-          House of Fashion!
+          Walk Freely!
         </Text>
       </VStack>
-      <SimpleGrid columns={{ sm: 3, md: 2, lg: 5 }} bg="whatsapp.100" spacing={6} p={6}>
-        {shirt.map((element) => (
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 5 }} bg="whatsapp.100" spacing={6} p={6}>
+        {shoes.map((element,i) => (
           <Card
-            key={element.id}
+            key={i}
             item={element}
-            type="shirt"
-            img={element.image?element.image:(element.price===100 || element.price===10?element.category.image:element.images[0])}
-            name={element.name}
-            brand={element.category.name?element.category.name:element.category}
-            model={element.title}
-            amount={element.price}
-            rating=""
+            type="footwear"
             Item_id={element.id}
-            left={element.rating?element.rating.count:0}
+            img={element.image}
+            name={element.name}
+            brand={element.brand}
+            rating={element.rating}
+            amount={element.price}
+            model={element.category}
+            left={element.items_left}
             checkoutHandler={checkoutHandler}
             // Adjusted width and height styles
             width="100%"
             maxW="300px"
             height="fit-content"
-            boxShadow="md"
+            boxShadow="md" 
             borderRadius="md"
             overflow="hidden"
             transition="transform 0.2s"
@@ -41,5 +39,5 @@ export default function Shirt({ checkoutHandler }) {
         ))}
       </SimpleGrid>
     </div>
-  );
+  )
 }

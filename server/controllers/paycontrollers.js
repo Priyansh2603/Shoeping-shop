@@ -1,6 +1,7 @@
 import { instance } from "../server.js";
 import crypto from "crypto";
 import { Payment } from "../models/paymentModel.js";
+import { deleteCart } from "./cartcontrollers.js";
 let brandf;
 let Item_idf;
 let user_id;
@@ -73,6 +74,7 @@ export const paymentveri = async (req, res) => {
       brand,
       Item_id,
     })
+    deleteCart(user_id);
     res.redirect(`http://localhost:3000/pay?reference=${user_id}&order_id=${razorpay_order_id}&payment_id=${razorpay_payment_id}`);
   }
   else {

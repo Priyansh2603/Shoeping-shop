@@ -29,5 +29,8 @@ const authSchema = new mongoose.Schema({
       interests: {
         type: [String],
       },
+      bio:{
+        type:String
+      }
 });
 export const Auth = mongoose.model("Auth",authSchema);

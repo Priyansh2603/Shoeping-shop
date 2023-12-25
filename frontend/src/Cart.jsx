@@ -1,6 +1,6 @@
 import React,{useContext, useEffect,useState} from 'react'
 import {AppState} from './App.js'
-import { SimpleGrid,Button } from '@chakra-ui/react';
+import { SimpleGrid,Text,VStack,Button } from '@chakra-ui/react';
 import ShowCart from './ShowCart.jsx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,23 +15,31 @@ export default function Cart({}) {
         // console.log(total," ",name," ",user)
         checkoutHandler(total, name, user)
     }
+    console.log("Cart",cart.length);
     useEffect(()=>{
-        const totalAmount = cart.reduce((total, item) => total + item.amount, 0);
+        const totalAmount = cart.reduce((total, item) => total + item.price, 0);
         setTotal(totalAmount);
     },[cart])
   return (<>
   <ToastContainer/>
-        <div  bg="whatsapp.100" style={{maxWidth:"100vw",backgroundColor:"pink", display:"flex",justifyContent:"center",paddingTop:"2vw",paddingBottom:"1vh"}}><h1 style={{display:"block"}}>You have {cart.length} items added in the cart</h1></div>
-    <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} bg={cart.length>0?"whatsapp.100":"white"} spacing={6} p={6}>
+  <VStack h="10vh" justifyContent="center" alignItems="center" backgroundColor="whatsapp.500" >
+    <Text textColor="blackAlpha" textTransform="uppercase" fontSize="25px" fontWeight="bold">
+      You have {cart.length} {cart.length===1?"item":"items"} added in the cart!
+    </Text>
+  </VStack>
+    <SimpleGrid columns={{ sm: 1, md: 2, lg: 5 }} bg={cart.length>0?"whatsapp.100":"white"} spacing={6} p={6}>
+      
         {cart.map((element,i) => (
           <ShowCart
+            item={element}
+            type="cart"
             key={i}
-            Item_id={element.Item_id}
-            img={element.image || element.img }
+            Item_id={element.Item_id?element.Item_id:element.id}
+            img={element.image?element.image:element.thumbnail?element.thumbnail:element.images[0] }
             name={element.name}
             brand={element.brand}
-            rating={element.rating}
-            amount={element.amount}
+            rating={element.rating?(element.rating.rate===undefined?element.rating:element.rating.rate):" "}
+            amount={element.price?element.price:element.amount}
             model={element.model}
             left={element.items_left}
             // Adjusted width and height styles
@@ -46,8 +54,7 @@ export default function Cart({}) {
           />
         ))}
       </SimpleGrid>
-      {
-        total?(<div style={{marginBottom:"4vw",marginLeft:"4vw",marginRight:"4vw",marginTop:"2vh"}}>
+      {cart.length ?(<div style={{marginBottom:"4vw",marginLeft:"4vw",marginRight:"4vw",marginTop:"2vh"}}>
             <Button
             width="100%"
             bg="whatsapp.100"
