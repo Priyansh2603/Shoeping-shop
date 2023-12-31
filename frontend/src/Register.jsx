@@ -18,8 +18,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import {useContext} from 'react'
 import {AppState} from './App'
+import { useToast } from '@chakra-ui/react';
+import { Spinner } from '@chakra-ui/react';
+import Cookies from 'js-cookie';
 const theme = createTheme();
-
 export default function Register() {
   const loggedIn = useContext(AppState).loggedIn;
   const history = useNavigate();
@@ -31,7 +33,49 @@ export default function Register() {
   const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
   const [interests, setInterests] = useState('');
-
+  const [loading, setLoading] = useState(false);
+  
+const toaster = useToast();
+  const postDetails = (pics)=>{
+    setLoading(true);
+    if(pics===undefined){
+      toaster({
+        title: 'Select an Image.',
+        description: "We couldn't find the image...",
+        status: 'error',
+        duration: 1500,
+        isClosable: true,
+      })
+      setLoading(false);
+    }
+    if(pics.type==="image/jpeg" || pics.type==="image/png"){
+      const data = new FormData();
+      data.append("file",pics);
+      data.append("upload_preset","shoeping");
+      data.append("cloud_name","dazhcprb8");
+      fetch("https://api.cloudinary.com/v1_1/dazhcprb8/image/upload",{
+        method:"post",body: data
+      }).then((res)=>res.json()).then((data)=>{
+        setPicture(data.url.toString());
+        console.log("Image Added successfully to",data.url.toString())
+        setLoading(false);
+      }).catch((e)=>{
+        console.log("Image Error:",e);
+        setLoading(false);
+      }
+      )
+    }
+    else{
+      toaster({
+        title: 'Not an Image.',
+        description: "Please choose image file...",
+        status: 'warning',
+        duration: 1500,
+        isClosable: true,
+      })
+      setLoading(false);
+    }
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     submit(event);
@@ -40,22 +84,26 @@ export default function Register() {
   async function submit(e) {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/auth/register", {
+      const response = await axios.post("/auth/register", {
         name, lastname, email, password, picture, gender, age, interests
       }, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
-
+      console.log(response.data);
       if (response.data.exist === "true") {
         toast.info("The Email is already registered!",{theme:"dark",autoClose:2000,position:"top-center"});
       } else if (response.data.exist === "false") {
         // console.log(response.data._doc._id);
-        loggedIn("true", name,response.data._doc._id,response.data);
+        loggedIn("true", name,response.data._doc._id,response.data._doc);
+        const userInfo = {...response.data._doc,"token": response.data.token};
+            localStorage.setItem('userInfo',userInfo);
+            localStorage.setItem('userId',response.data._doc._id);
+            Cookies.set("user",response.data._doc._id,{expires:30});
         document.title=`Shoeping (${name})`
         history("/");
-        toast.success(`Registered Successfully! as${name}`,{theme:"dark",autoClose:2000,position:"top-center"});
+        toast.success(`Registered Successfully! as ${name}`,{theme:"dark",autoClose:2000,position:"top-center"});
       }
     } catch (error) {
       toast.error("Wrong Details",{theme:"dark",autoClose:2000,position:"top-center"});
@@ -138,12 +186,12 @@ export default function Register() {
                 <Grid item xs={12}>
                   <TextField
                     fullWidth
-                    type="limk"
-                    onChange={(e) => { setPicture(e.target.value) }}
+                    type="file"
+                    accept = "image/*"
+                    onChange={(e) => { postDetails(e.target.files[0]) }}
                     id="picture"
                     name="picture"
-                    label="Profile Picture Address"
-                    value={picture}
+                    label="Profile Picture"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -190,8 +238,9 @@ export default function Register() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                isLoading = {loading}
               >
-                Sign Up
+                {loading?"Loading...":"Sign Up"}
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>

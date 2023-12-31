@@ -13,7 +13,7 @@ const Paysuccess = () => {
   // console.log("Effect k bahar: ",user_id);
   async function findUser() {
     try {
-      const res = await axios.post("http://localhost:8000/auth/getuser", { user_id });
+      const res = await axios.post("/auth/getuser", { user_id });
       // console.log("Response:", res.data);
   
       if (!res.data) {
@@ -21,6 +21,7 @@ const Paysuccess = () => {
         // console.log("It must be false");
       } else {
         loggedIn(true, res.data.name, res.data._id,res.data);
+        document.title=`Shoeping (${res.data.name})`
         // console.log("after pay ", res.data.name, " ", res.data._id);
       }
   

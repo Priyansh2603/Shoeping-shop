@@ -24,6 +24,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "../Navbar.css" 
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 const ProfilePage = () => {
     const history = useNavigate();
   const login = useContext(AppState).login;
@@ -44,6 +45,8 @@ const ProfilePage = () => {
           console.log("Error Logout!",e);
         }
         loggedIn(false,'','',{});
+        localStorage.setItem("userId",'');
+        Cookies.set("user",'');
         toast.info("You've been Logged Out!",{theme:"dark",autoClose:2000,position:"top-center"})
         document.title=`Shoeping`;
         history("/")

@@ -1,6 +1,7 @@
 import { Auth } from "../models/userauthModel.js";
 import bcrypt from 'bcrypt';
 import mongoose from "mongoose";
+import generateToken from "../config/generateToken.js"
 const saltRounds = 10;
 export const authLogin= async(req,res)=>{
     const {email,password} = req.body;
@@ -13,7 +14,8 @@ export const authLogin= async(req,res)=>{
                   console.error('Error comparing passwords:', compareErr);
                 }
                 if (result) {
-                    res.status(200).json(user)
+                    // const resUser = {...user,token:generateToken(user._id)};
+                    res.status(200).json(user);
                     console.log(user)
                   console.log('Password Matched! Login Successful');
                 } else {
@@ -58,7 +60,8 @@ export const authRegister = async(req,res)=>{
           const userData = await Auth.findOne({email:email});
           if(userData){
             console.log(userData);
-            const response = {...userData,exist:"false"}
+            const response = {...userData,exist:"false",token:generateToken(userData._id)};
+            console.log(response)
             res.status(201).json(response); 
           }
           console.log('Hashed Password:', hashPass);

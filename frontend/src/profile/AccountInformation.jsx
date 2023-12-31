@@ -79,7 +79,7 @@ const AccountInformation = () => {
                         <div className="interests">
                             <h3>Interests:</h3>
                             <ul>
-                                {interests.map((interest, index) => (
+                                {interests && interests.map((interest, index) => (
                                     <li key={index}>{interest}</li>
                                 ))}
                             </ul>

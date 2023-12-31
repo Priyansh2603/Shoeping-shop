@@ -12,6 +12,7 @@ dotenv.config({ path: new URL('config/config.env', import.meta.url) });
 connectDB();
 console.log("PORT:",process.env.PORT)
 console.log("Razorpay:",process.env.RAZORPAY_API_KEY)
+console.log("Secert:",process.env.JWT_SECRET)
 export const instance  = new Razorpay({
     key_id : process.env.RAZORPAY_API_KEY,
     key_secret : process.env.RAZORPAY_API_SECRET,

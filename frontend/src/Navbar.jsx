@@ -1,13 +1,16 @@
 import React, { useEffect,useState } from 'react';
 // import {Link as RLink} from "react"
 import { FaShoppingCart } from 'react-icons/fa';
-import logo from './img/Shoeping-logo.png'
+import logo from './img/Shoeping-logo.png';
+import SearchIcon from '@mui/icons-material/Search';
 import {
   Box,
   Flex,
   Spacer,
   Text,
   Button,
+  Container,
+  Input,
   Menu,
   MenuButton,
   MenuList,
@@ -40,7 +43,7 @@ const Navbar = () => {
   },[login]);
   async function logout(){
       try{
-        const sendCart = await axios.post("http://localhost:8000/cart/addcart",{cart,UserId:user,name});
+        const sendCart = await axios.post("/cart/addcart",{cart,UserId:user,name});
         // console.log("Sent cart");
         if(sendCart){
           window.alert("Cart Added");
@@ -54,7 +57,7 @@ const Navbar = () => {
       history("/")
   }
   return (
-    <Box bg="gray.800" py={3} >
+    <Box h='12vh' bg="gray.800" py={3} >
     <Flex
         align="center"
         className='flx'
@@ -62,27 +65,30 @@ const Navbar = () => {
       >
       <RLink to={''} ><img className='logo' src={logo}/></RLink>
       <Spacer className='space' style={{maxWidth:"1vw"}} />
-      <Link as="RLink" className="link"  color="whatsapp.100" mr={4}>
+      <Link as="RLink" className="link"  color="whatsapp.100" ml={2} mr={2}>
         <RLink className="link" to={''}>
       Home
         </RLink>
         </Link>
-      <Link as="RLink" className="link"  color="whatsapp.100" mr={4}>
+      <Link as="RLink" className="link"  color="whatsapp.100" ml={2} mr={2}>
         <RLink className="link" to={''}>
         About
         </RLink>
       </Link>
       <Menu className="link">
         <MenuButton
-          fontWeight="bold"
           colorScheme="teal"
           color="whatsapp.100"
           variant="link"
           className="menu-button"
-          mr={2}
+          ml={2} mr={2}
+          style={{display:"flex",flexDirection:'row'}}
         >
-          Categories
-          <ChevronDownIcon className='dropdown' />
+       <span style={{display:'flex',flexDirection:'row'}}>
+       <p> Categories </p>
+        <p><ChevronDownIcon className='dropdown' />
+          </p>
+       </span>
         </MenuButton>
         <MenuList bg="whatsapp.100" color="black" border="1px solid #e2e8f0">
           {/* ... (menu items) */}
@@ -92,12 +98,21 @@ const Navbar = () => {
           <RLink  className='menu' to={'grooming'}><MenuItem bg="whatsapp.100" color="black"  >Grooming</MenuItem></RLink>
         </MenuList>
       </Menu>
-      <Link as="RLink" className="link"  color="whatsapp.100" mr={4}>
+      <Link as="RLink" className="link"  color="whatsapp.100" ml={2} mr={2}>
         <RLink className="link" to={''}>
-          Our Services
+          Services
         </RLink>
         </Link>
-      <Spacer className='space2'  />
+      {/* <Spacer className='space2'  /> */}
+      < >
+      <div className={'search'}   centerContent>
+      {/* <span className="search"> */}
+          <Input type="text" placeholder="Search..." mt='3' />
+          <Button colorScheme="yellow" ml="1.5" mt='3'>
+            <SearchIcon/>
+          </Button>
+      </div>
+      </>
       {log?(<><p className='welcome'>Welcome {name}</p> 
       <RLink to={'cart'}>
         {/* <ShoppingCartIcon style={{color:"white",minWidth:"4vw",minHeight:"6vh",marginRight:"1vw"}}/> */}

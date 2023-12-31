@@ -24,6 +24,7 @@ import Wishlist from './profile/Wishlist.jsx';
 import Groom from './Groom.jsx';
 import Footwear from './Footwear.jsx';
 import ProductDetails from './ProductDetails.jsx';
+import Cookies from 'js-cookie';
 const AppState = createContext();
 function App() {
   const [userdetails,setUserdetails] = useState({});
@@ -33,13 +34,43 @@ function App() {
   const [cart,setCart] = useState([]);
   const [UserId,setUserId] = useState('');
   const [item,setItem] = useState({});
+  async function loadUser(){
+    const id = Cookies.get("user")
+    console.log(id);
+    const strId = id.toString();
+    
+      try {
+        const res = await axios.post("/auth/getuser", { user_id:strId });
+        console.log("Getting User!");
+    
+        if (!res.data) {
+          loggedIn(false, '', '');
+          // console.log("It must be false");
+        } else {
+          console.log("Logged In as:",res.data.name)
+          document.title=`Shoeping (${res.data.name})`
+          loggedIn(true, res.data.name, res.data._id,res.data);
+          // console.log("after pay ", res.data.name, " ", res.data._id);
+        }
+    
+      } catch (error) {
+        // Handle error (e.g., network error, server error)
+        console.error("Error fetching user:", error.message);
+        // Optionally, handle the error by calling loggedIn with appropriate parameters
+        loggedIn(false, '', '',{});
+      }
+    
+  }
+  useEffect(()=>{
+    loadUser();
+  },[])
   function loggedIn(check,usrnm,id,details){
     setLogin(check);
     setName(usrnm);
     setUser(id);
     settingUserId(id);
     setUserdetails(details);
-    console.log("LoggedIn ",cart);
+    console.log("LoggedIn ",id);
   }
   function settingUserId(id){
     setUserId(id.toString());

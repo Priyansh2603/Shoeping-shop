@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 // import bcrypt from 'bcrypt';
 import {Link, useNavigate} from 'react-router-dom';
 // import {history} from 'react-router-dom';
@@ -44,7 +45,7 @@ export default function Login() {
     e.preventDefault();
     // console.log(email,password);
     try{
-        const res = await axios.post("http://localhost:8000/auth/login", {
+        const res = await axios.post("/auth/login", {
            email, password,
           }, {
             headers: {
@@ -57,6 +58,8 @@ export default function Login() {
             // console.log("from login",res.data._id)
             // console.log(res.data);
             loggedIn(true,name,res.data._id,res.data);
+            localStorage.setItem("userId",res.data._id);
+            Cookies.set("user",res.data._id,{expires:30});
             document.title=`Shoeping (${name})`
             history("/");
             toast.success(`Logged in Successfully as ${name}`,{theme:"dark",autoClose:2000,position:"top-center"});
