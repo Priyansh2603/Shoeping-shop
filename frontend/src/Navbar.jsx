@@ -154,7 +154,7 @@ const Navbar = () => {
           style={{
             position: 'absolute',
             top: {windowWidth}>768?"-0.6vh":"-0.7vh",
-            fontSize:{windowWidth}>768?"0.8vw":"2vw",
+            fontSize:{windowWidth}<768?"2vw":"10px",
             right: {windowWidth}>768?"-1vh":"-0.5vh",
             height: cart.length > 9 ? "2.4vh" : "2.3vh",
             width: cart.length > 9 ? "1.5vw" : "1.1vw",
@@ -164,7 +164,7 @@ const Navbar = () => {
             alignItems:"center",
             background: 'red',
             borderRadius: '100%',
-            padding:{windowWidth}>768?"0vh 0.6vh":"0 1.1vh",
+            padding:{windowWidth}<768?"0vh 0.6vh":"0 0.8vh",
             paddingBottom:{windowWidth}>768?"0.3vh":"",
             color: 'white',
           }}

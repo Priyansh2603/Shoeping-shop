@@ -16,7 +16,7 @@ export const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended : true }));
-app.get("/",(req,res)=>{res.send("<h1>Backend of Shoeping running here</h1>")})
+app.get("/",(req,res)=>{res.send("<h1>Backend of Shoeping running here on render</h1>")})
 app.use("/auth",authroute);
 app.get("/auth",(req,res)=>{res.send("<h1>Authentication Service...</h1>")})
 app.use("/cart",cartroute);
