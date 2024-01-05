@@ -90,6 +90,7 @@ const toaster = useToast();
         headers: {
           'Content-Type': 'application/json',
         },
+          withCredentials: true,
       });
       console.log(response.data);
       if (response.data.exist === "true") {

@@ -51,6 +51,7 @@ export default function Login() {
             headers: {
               'Content-Type': 'application/json',
             },
+              withCredentials: true,
           });
           if (res.data.email===email) {
             // Assuming the response structure is { email, name, ...otherUserData }

@@ -13,7 +13,12 @@ const Paysuccess = () => {
   // console.log("Effect k bahar: ",user_id);
   async function findUser() {
     try {
-      const res = await axios.post("/auth/getuser", { user_id });
+      const res = await axios.post("/auth/getuser", { user_id }, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+          withCredentials: true,
+      });
       // console.log("Response:", res.data);
   
       if (!res.data) {

@@ -28,6 +28,11 @@ const AccountInformation = () => {
             age: editedAge,
             bio: editedBio,
             // Add other fields as needed
+          }, {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+              withCredentials: true,
           });
           if(response.data===false){
             toast.error("Error Upadating Profile! ",{theme:"dark",autoClose:2000,position:"top-center"});

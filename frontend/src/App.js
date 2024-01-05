@@ -40,7 +40,12 @@ function App() {
     const strId = id.toString();
     
       try {
-        const res = await axios.post("/auth/getuser", { user_id:strId });
+        const res = await axios.post("/auth/getuser", { user_id:strId }, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+            withCredentials: true,
+        });
         console.log("Getting User!");
     
         if (!res.data) {
@@ -95,7 +100,12 @@ function App() {
     // console.log("In get cart ",UserId)
     try{
       // const UserId = user.toString();
-      const res = await axios.post("/cart/getcart",{UserId,name});
+      const res = await axios.post("/cart/getcart",{UserId,name}, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+          withCredentials: true,
+      });
       if(res.data==="Not found"){
         // console.log("Not Found")
         setCart([]);
@@ -119,8 +129,18 @@ function App() {
   },[name,user,login,UserId])
   const checkoutHandler=async(amount,model,Item_id) => {
     // console.log("From CheckoutHandler:",amount," ",model," ",Item_id)
-    const { data: {key} } = await axios.get("/api/getkey");
-    const { data: {order} } = await axios.post("/api/checkout",{amount,model,Item_id,user});
+    const { data: {key} } = await axios.get("/api/getkey", {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+        withCredentials: true,
+    });
+    const { data: {order} } = await axios.post("/api/checkout",{amount,model,Item_id,user}, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+        withCredentials: true,
+    });
     // console.log(data)
     // console.log(window)
     // console.log("Item_id:",Item_id)
