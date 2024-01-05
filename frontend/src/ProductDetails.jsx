@@ -19,7 +19,7 @@ const StyledImageContainer = styled('div')({
   position: 'relative',
   overflow: 'hidden',
   '&:hover img': {
-    transform: 'scale(1.2)', // Zoom effect on hover
+    transform: 'scale(20)', // Zoom effect on hover
     transition: 'transform 0.3s ease-in-out',
     zIndex: 1,
   },
@@ -92,6 +92,12 @@ const ProductDetails = ({ product }) => {
     image,
     images,
   } = product;
+  const StyledCard = styled(Card)({
+    maxWidth: 800,
+    margin: 'auto',
+    marginTop: 20,
+    overflow: 'auto', // or overflow-y: auto
+  });
   return (
     <ThemeProvider theme={theme}>
       <StyledCard>

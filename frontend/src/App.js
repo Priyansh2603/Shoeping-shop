@@ -95,7 +95,7 @@ function App() {
     // console.log("In get cart ",UserId)
     try{
       // const UserId = user.toString();
-      const res = await axios.post("http://localhost:8000/cart/getcart",{UserId,name});
+      const res = await axios.post("/cart/getcart",{UserId,name});
       if(res.data==="Not found"){
         // console.log("Not Found")
         setCart([]);
@@ -119,8 +119,8 @@ function App() {
   },[name,user,login,UserId])
   const checkoutHandler=async(amount,model,Item_id) => {
     // console.log("From CheckoutHandler:",amount," ",model," ",Item_id)
-    const { data: {key} } = await axios.get("http://localhost:8000/api/getkey");
-    const { data: {order} } = await axios.post("http://localhost:8000/api/checkout",{amount,model,Item_id,user});
+    const { data: {key} } = await axios.get("/api/getkey");
+    const { data: {order} } = await axios.post("/api/checkout",{amount,model,Item_id,user});
     // console.log(data)
     // console.log(window)
     // console.log("Item_id:",Item_id)
@@ -132,16 +132,16 @@ function App() {
         description: "Shoe web",
         image: "",
         order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: `http://localhost:8000/api/paymentveri`,
+        callback_url: `/api/paymentveri`,
         model:model,
         Item_id: Item_id,
         prefill: {
-            name: "Gaurav Kumar",
-            email: "gaurav.kumar@example.com",
-            contact: "9000090000"
+            name: "Priyansh Daksha",
+            email: "ishudaksh2603@example.com",
+            contact: "8791152142"
         },
         notes: {
-            address: "Razorpay Corporate Office"
+            address: "Muzaffarnagar,India"
         },
         theme: {
             color: "#3399cc"

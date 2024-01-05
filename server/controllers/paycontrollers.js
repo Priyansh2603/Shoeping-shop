@@ -75,7 +75,7 @@ export const paymentveri = async (req, res) => {
       Item_id,
     })
     deleteCart(user_id);
-    res.redirect(`http://localhost:3000/pay?reference=${user_id}&order_id=${razorpay_order_id}&payment_id=${razorpay_payment_id}`);
+    res.redirect(`https://shoeping-shop.vercel.app/pay?reference=${user_id}&order_id=${razorpay_order_id}&payment_id=${razorpay_payment_id}`);
   }
   else {
     res.status(400).json({
