@@ -1,4 +1,7 @@
-
+*{
+  font-family: url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+  ;
+}
 .link:hover {
     color: pink; 
     text-decoration: none;
@@ -11,6 +14,9 @@
   }
   
   @media (max-width: 768px) {
+    *{
+      max-width: 100%;
+    }
     .link {
       display: block;
       text-align: center;

@@ -10,7 +10,7 @@ import Navbar from "./Navbar";
 import Phone from "./Phone.jsx";
 import Register from "./Register.jsx";
 import Login from './Login.jsx';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createContext, useEffect, useState } from 'react';
 import Cart from './Cart.jsx'
@@ -48,6 +48,7 @@ function App() {
           // console.log("It must be false");
         } else {
           console.log("Logged In as:",res.data.name)
+          toast.success(`Logged in Successfully as ${res.data.name}`,{theme:"dark",autoClose:2000,position:"top-center"});
           document.title=`Shoeping (${res.data.name})`
           loggedIn(true, res.data.name, res.data._id,res.data);
           // console.log("after pay ", res.data.name, " ", res.data._id);
@@ -156,7 +157,7 @@ function App() {
     <AppState.Provider value={{login,setItem, loggedIn,userdetails,checkoutHandler, logout,user, name,setUser,setName,cart,setCart,addingCart,removeCartItem}}>
      <Router>
       <ToastContainer/>
-    <Navbar/>
+    <div style={{display:"absolute"}}><Navbar style={{display:"sticky"}}/></div>
     <div className="App" style={{alignItems : "center", justifyContent: "center",}}>
       <Routes>
         <Route path="/" element={<Home checkoutHandler= {checkoutHandler}/>} />
