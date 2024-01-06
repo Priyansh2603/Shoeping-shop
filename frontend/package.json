@@ -27,7 +27,7 @@
     "react-toastify": "^9.1.3",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "https://shoeping2.onrender.com",
+  "proxy": "https://shoeping.onrender.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
