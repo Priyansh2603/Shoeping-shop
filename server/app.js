@@ -13,9 +13,7 @@ const __dirname = dirname(__filename);
 dotenv.config({ path: new URL('config/config.env', import.meta.url) });
 console.log(process.env.RAZORPAY_API_KEY)
 export const app = express();
-app.use(cors({
-    origin: 'https://shoeping-shop.vercel.app/'
-  }));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended : true }));
 app.get("/",(req,res)=>{res.send("<h1>Backend of Shoeping running here on render</h1>")})
