@@ -84,7 +84,7 @@ const toaster = useToast();
   async function submit(e) {
     e.preventDefault();
     try {
-      const response = await axios.post("/auth/register", {
+      const response = await axios.post("https://shoeping.onrender.com/auth/register", {
         name, lastname, email, password, picture, gender, age, interests
       }, {
         headers: {

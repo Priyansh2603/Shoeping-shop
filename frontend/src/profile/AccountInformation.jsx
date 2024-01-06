@@ -22,7 +22,7 @@ const AccountInformation = () => {
     const handleSaveChanges = async() => {
         // Implement logic to save changes to the server or state
         console.log(user);
-        const response = await axios.patch(`http://localhost:8000/auth/update/${user}`, {
+        const response = await axios.patch(`https://shoeping.onrender.com/auth/update/${user}`, {
             userId : user,
             gender: editedGender,
             age: editedAge,

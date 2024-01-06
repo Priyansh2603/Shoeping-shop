@@ -45,7 +45,7 @@ export default function Login() {
     e.preventDefault();
     // console.log(email,password);
     try{
-        const res = await axios.post("/auth/login", {
+        const res = await axios.post("https://shoeping.onrender.com/auth/login", {
            email, password,
           }, {
             headers: {
