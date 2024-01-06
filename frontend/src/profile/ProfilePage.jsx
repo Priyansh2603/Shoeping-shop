@@ -35,7 +35,7 @@ const ProfilePage = () => {
     async function logout(){
       console.log(cart);
         try{
-          const sendCart = await axios.post("http://localhost:8000/cart/addcart",{cart,UserId:user,name}, {
+          const sendCart = await axios.post("/cart/addcart",{cart,UserId:user,name}, {
             headers: {
               'Content-Type': 'application/json',
             },
