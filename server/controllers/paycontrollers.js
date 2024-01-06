@@ -5,6 +5,7 @@ import { deleteCart } from "./cartcontrollers.js";
 let brandf;
 let Item_idf;
 let user_id;
+let payfor;
 export const checkout = async (req, res) => {
   try {
   const options = {
@@ -20,8 +21,10 @@ export const checkout = async (req, res) => {
   brandf = options.notes.value;
   Item_idf = options.notes.item;
   user_id = req.body.user;
+  payfor = req.body.from;
     const order = await instance.orders.create(options);
     const model = req.body.model;
+    console.log("Paid for:",payfor);
     console.log(model + " checkout")
     console.log(options)
     console.log(order);
@@ -74,7 +77,10 @@ export const paymentveri = async (req, res) => {
       brand,
       Item_id,
     })
-    deleteCart(user_id);
+    console.log("Details", payfor);
+    if(payfor==="cart"){
+      deleteCart(user_id);
+    }
     res.redirect(`https://shoeping-shop.vercel.app/pay?reference=${user_id}&order_id=${razorpay_order_id}&payment_id=${razorpay_payment_id}`);
   }
   else {

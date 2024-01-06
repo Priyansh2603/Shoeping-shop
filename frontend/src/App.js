@@ -117,10 +117,10 @@ function App() {
     // console.log("Tried: ",name," ",login," ",UserId);
     getCart();
   },[name,user,login,UserId])
-  const checkoutHandler=async(amount,model,Item_id) => {
+  const checkoutHandler=async(amount,model,Item_id,from) => {
     // console.log("From CheckoutHandler:",amount," ",model," ",Item_id)
     const { data: {key} } = await axios.get("https://shoeping.onrender.com/api/getkey");
-    const { data: {order} } = await axios.post("https://shoeping.onrender.com/api/checkout",{amount,model,Item_id,user});
+    const { data: {order} } = await axios.post("https://shoeping.onrender.com/api/checkout",{amount,model,Item_id,user,from});
     // console.log(data)
     // console.log(window)
     // console.log("Item_id:",Item_id)

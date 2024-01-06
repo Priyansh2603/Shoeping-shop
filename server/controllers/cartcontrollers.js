@@ -15,7 +15,7 @@ export const cartUpdate = async (req, res) => {
             rating: (item.rating)?(item.rating.rate?item.rating.rate:item.rating):2,
             brand: item.brand,
             description: item.description,
-            category: item.category,
+            category: (item.category.name)?item.category.name:item.category,
             title: item.title,
             discountPercentage: item.discountPercentage,
             left: item.left,

@@ -15,7 +15,7 @@ const Card = ({ item,amount, img, model, Item_id, checkoutHandler,type, left, na
   const removeCartItem = useContext(AppState).removeCartItem;
   const history = useNavigate();
   function OpenPay(){
-    checkoutHandler(amount, model, Item_id)
+    checkoutHandler(amount, model, Item_id,"item");
   }
   function AddCart(){
       addingCart(item);

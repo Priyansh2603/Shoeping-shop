@@ -13,7 +13,7 @@ export default function Cart({}) {
     const [total,setTotal] = useState(0);
     async function OpenPay(){
         // console.log(total," ",name," ",user)
-        checkoutHandler(total, name, user)
+        checkoutHandler(total, name, user,"cart");
     }
     console.log("Cart",cart.length);
     useEffect(()=>{
