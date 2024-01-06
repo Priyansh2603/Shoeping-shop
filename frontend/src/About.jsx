@@ -10,7 +10,7 @@ const AboutSection = () => {
     <Box border={"2px solid yellow"} margin={"2vh 0"} p={8}>
       <Heading color={"white"} mb={4}>About Shoeping</Heading>
       <Flex flexDir={{ base: 'column', md: 'row' }} align="center" justify="space-between">
-        <Image src="http://localhost:3000/static/media/Shoeping-logo.1cddbf3dd454ce2b01e8.png" alt="Developer Profile" boxSize="200px" objectFit="cover" borderRadius="full" />
+        <Image src="https://shoeping-shop.vercel.app/static/media/Shoeping-logo.1cddbf3dd454ce2b01e8.png" alt="Developer Profile" boxSize="200px" objectFit="cover" borderRadius="full" />
         <VStack ml={{ base: 0, md: 8 }} textAlign={{ base: 'center', md: 'left' }} mt={{ base: 4, md: 0 }}>
           <Text fontSize="lg">
             Hello! We are Shoeping, a dedicated team of developers and creators behind our ecommerce
