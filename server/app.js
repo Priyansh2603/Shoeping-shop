@@ -13,6 +13,12 @@ const __dirname = dirname(__filename);
 dotenv.config({ path: new URL('config/config.env', import.meta.url) });
 console.log(process.env.RAZORPAY_API_KEY)
 export const app = express();
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 app.use(cors({
     origin: ['http://localhost:3000', 'https://shoeping-shop.vercel.app/']
   }));
