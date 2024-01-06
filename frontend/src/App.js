@@ -132,7 +132,7 @@ function App() {
         description: "Shoe web",
         image: "",
         order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: `/api/paymentveri`,
+        callback_url: `https://shoeping.onrender.com/api/paymentveri`,
         model:model,
         Item_id: Item_id,
         prefill: {
