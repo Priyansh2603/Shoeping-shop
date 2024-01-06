@@ -77,7 +77,7 @@ export const cartUpdate = async (req, res) => {
         }
     } catch (e) {
         console.error('Error adding or updating cart:', e);
-        return res.status(500).json({ error: 'Internal server error from backend' });
+        return res.status(500).json({ error: 'Internal server error from backend', with: e });
     }
     
 }

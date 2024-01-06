@@ -86,11 +86,6 @@ const toaster = useToast();
     try {
       const response = await axios.post("https://shoeping.onrender.com/auth/register", {
         name, lastname, email, password, picture, gender, age, interests
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-          withCredentials: true,
       });
       console.log(response.data);
       if (response.data.exist === "true") {

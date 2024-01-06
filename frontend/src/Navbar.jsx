@@ -66,12 +66,7 @@ const Navbar = () => {
   },[login]);
   async function logout(){
       try{
-        const sendCart = await axios.post("https://shoeping.onrender.com/cart/addcart",{cart,UserId:user,name}, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-            withCredentials: true,
-        });
+        const sendCart = await axios.post("https://shoeping.onrender.com/cart/addcart",{cart,UserId:user,name});
         // console.log("Sent cart");
         if(sendCart){
           window.alert("Cart Added");

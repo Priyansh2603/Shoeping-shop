@@ -21,63 +21,62 @@ import { AppState } from '../App';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "../Navbar.css" 
+import "../Navbar.css"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 const ProfilePage = () => {
-    const history = useNavigate();
+  const history = useNavigate();
   const login = useContext(AppState).login;
   const name = useContext(AppState).name;
   const user = useContext(AppState).user;
   const loggedIn = useContext(AppState).loggedIn;
   const { cart } = useContext(AppState);
-    async function logout(){
-      console.log(cart);
-        try{
-          const sendCart = await axios.post("https://shoeping.onrender.com/cart/addcart",{cart,UserId:user,name}, {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-              withCredentials: true,
-          });
-          // console.log("Sent cart");
-          if(sendCart){
-            window.alert("Cart Added");
-          }
-        }catch(e){
-          // console.log(e)
-          console.log("Error Logout!",e);
-        }
-        loggedIn(false,'','',{});
-        localStorage.setItem("userId",'');
-        Cookies.set("user",'');
-        toast.info("You've been Logged Out!",{theme:"dark",autoClose:2000,position:"top-center"})
-        document.title=`Shoeping`;
-        history("/")
+  async function logout() {
+    console.log(cart);
+    try {
+      const sendCart = await axios.post("https://shoeping.onrender.com/cart/addcart", {
+        cart,
+        UserId: user,
+        name
+      });
+      // console.log("Sent cart");
+      if (sendCart) {
+        window.alert("Cart Added");
+      }
+    } catch (e) {
+      // console.log(e)
+      console.log("Error Logout!", e);
     }
+    loggedIn(false, '', '', {});
+    localStorage.setItem("userId", '');
+    Cookies.set("user", '');
+    toast.info("You've been Logged Out!", { theme: "dark", autoClose: 2000, position: "top-center" })
+    document.title = `Shoeping`;
+    history("/")
+  }
   return (
     <div className="profile-container">
       <ProfileHeader />
       <div className="profile-content">
         <div className="profile-section">
-        <Link to={'accountinfo'}>Account Information</Link>
+          <Link to={'accountinfo'}>Account Information</Link>
         </div>
 
         <div className="profile-section">
-        <Link to={'contactInfo'}>Contact Information</Link>
+          <Link to={'contactInfo'}>Contact Information</Link>
         </div>
         <div className="profile-section">
-        <Link to={'/cart'}>Cart Details</Link>
+          <Link to={'/cart'}>Cart Details</Link>
         </div>
         <div className="profile-section">
-        <Link to={'contactInfo'}>Contact Information</Link>
+          <Link to={'contactInfo'}>Contact Information</Link>
         </div>
         <div className="profile-section">
-        <Link to={'contactInfo'}>Contact Information</Link>
+          <Link to={'contactInfo'}>Contact Information</Link>
         </div>
         <div className="profile-section">
-        <Link to={'contactInfo'}>Contact Information</Link>
+          <Link to={'contactInfo'}>Contact Information</Link>
         </div>
 
         <div className="profile-section">

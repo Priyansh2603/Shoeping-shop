@@ -13,12 +13,7 @@ const Paysuccess = () => {
   // console.log("Effect k bahar: ",user_id);
   async function findUser() {
     try {
-      const res = await axios.post("/auth/getuser", { user_id }, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-          withCredentials: true,
-      });
+      const res = await axios.post("https://shoeping.onrender.com/auth/getuser", { user_id });
       // console.log("Response:", res.data);
   
       if (!res.data) {
