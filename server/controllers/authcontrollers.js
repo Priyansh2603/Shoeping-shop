@@ -1,8 +1,35 @@
 import { Auth } from "../models/userauthModel.js";
 import bcrypt from 'bcrypt';
 import mongoose from "mongoose";
-import generateToken from "../config/generateToken.js"
+import generateToken from "../config/generateToken.js";
+import nodemailer from 'nodemailer'
 const saltRounds = 10;
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'ishudaksh2603@gmail.com',
+      pass: 'nwgdoklamdgyuwmc',
+    },
+  });
+  
+  // Function to send an email
+  async function sendEmail(to, text) {
+    const mailOptions = {
+      from: 'your_email@gmail.com',
+      to: to,
+      subject: "Welcome to Shoeping!!",
+      text: text,
+      // You can also use HTML in the email body:
+      // html: '<p>HTML content of the email</p>',
+    };
+  
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      console.log('Email sent: ' + info.response);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  }
 export const authLogin= async(req,res)=>{
     const {email,password} = req.body;
     console.log(email," ",password)
@@ -15,6 +42,24 @@ export const authLogin= async(req,res)=>{
                 }
                 if (result) {
                     // const resUser = {...user,token:generateToken(user._id)};
+                    sendEmail(email, `
+                    
+                        Welcome to Shoeping!
+
+                        Dear ${email},
+
+                        We warmly welcome you to Shoeping! Thank you for choosing us to embark on your online shopping journey. At Shoeping, we strive to provide an unparalleled shopping experience, tailored to your needs.
+
+                        [Logo: Shoeping Logo](https://example.com/logo.png)
+
+                        Explore a new world of online shopping with us and discover a vast array of products and services. Your satisfaction is our top priority, and we value your trust in us.
+
+                        Thank you once again for joining us at Shoeping. We look forward to serving you and exceeding your expectations.
+
+                        Best regards,
+                        The Shoeping Team
+                    `);
+
                     res.status(200).json(user);
                     console.log(user)
                   console.log('Password Matched! Login Successful');
@@ -34,6 +79,7 @@ export const authLogin= async(req,res)=>{
 
 }
 export const authRegister = async(req,res)=>{
+  console.log('Received!')
     const {name,lastname,email,password,picture,gender,age,interests,} = req.body;
     try{
         const user = await Auth.findOne({email:email});
@@ -56,6 +102,7 @@ export const authRegister = async(req,res)=>{
             interests: interests,
           };
           console.log(data)
+          sendEmail(email,`{"Dear ${name},}`+'/n'+ "We Welcome you at Shoeping, Thank You for choosing us /n Explore new world of online shopping with us we respect our customers...")
           await Auth.insertMany([data]);
           const userData = await Auth.findOne({email:email});
           if(userData){
