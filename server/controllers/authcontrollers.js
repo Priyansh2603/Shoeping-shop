@@ -42,23 +42,23 @@ export const authLogin= async(req,res)=>{
                 }
                 if (result) {
                     // const resUser = {...user,token:generateToken(user._id)};
-                    sendEmail(email, `
+                    // sendEmail(email, `
                     
-                        Welcome to Shoeping!
+                    //     Welcome to Shoeping!
 
-                        Dear ${email},
+                    //     Dear ${email},
 
-                        We warmly welcome you to Shoeping! Thank you for choosing us to embark on your online shopping journey. At Shoeping, we strive to provide an unparalleled shopping experience, tailored to your needs.
+                    //     We warmly welcome you to Shoeping! Thank you for choosing us to embark on your online shopping journey. At Shoeping, we strive to provide an unparalleled shopping experience, tailored to your needs.
 
-                        [Logo: Shoeping Logo](https://example.com/logo.png)
+                    //     [Logo: Shoeping Logo](https://example.com/logo.png)
 
-                        Explore a new world of online shopping with us and discover a vast array of products and services. Your satisfaction is our top priority, and we value your trust in us.
+                    //     Explore a new world of online shopping with us and discover a vast array of products and services. Your satisfaction is our top priority, and we value your trust in us.
 
-                        Thank you once again for joining us at Shoeping. We look forward to serving you and exceeding your expectations.
+                    //     Thank you once again for joining us at Shoeping. We look forward to serving you and exceeding your expectations.
 
-                        Best regards,
-                        The Shoeping Team
-                    `);
+                    //     Best regards,
+                    //     The Shoeping Team
+                    // `);
 
                     res.status(200).json(user);
                     console.log(user)
@@ -102,7 +102,22 @@ export const authRegister = async(req,res)=>{
             interests: interests,
           };
           console.log(data)
-          sendEmail(email,`{"Dear ${name},}`+'/n'+ "We Welcome you at Shoeping, Thank You for choosing us /n Explore new world of online shopping with us we respect our customers...")
+          sendEmail(email,`
+                    
+          Welcome to Shoeping!
+
+          Dear ${name},
+
+          We warmly welcome you to Shoeping! Thank you for choosing us to embark on your online shopping journey. At Shoeping, we strive to provide an unparalleled shopping experience, tailored to your needs.
+
+
+          Explore a new world of online shopping with us and discover a vast array of products and services. Your satisfaction is our top priority, and we value your trust in us.
+
+          Thank you once again for joining us at Shoeping. We look forward to serving you and exceeding your expectations.
+
+          Best regards,
+          The Shoeping Team
+      `)
           await Auth.insertMany([data]);
           const userData = await Auth.findOne({email:email});
           if(userData){
