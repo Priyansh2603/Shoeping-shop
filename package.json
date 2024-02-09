@@ -21,6 +21,7 @@
     "i": "^0.3.7",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.9",
     "npm": "^10.2.4",
     "razorpay": "^2.9.2",
     "react": "^18.2.0",
