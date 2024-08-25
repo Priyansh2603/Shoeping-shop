@@ -1,7 +1,6 @@
-import React, { useEffect,useState } from 'react';
-// import {Link as RLink} from "react"
+import React, { useEffect, useState, useContext } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import logo from './img/Shoeping-logo.png';
+import logo from './img/shoeping-logo.png';
 import SearchIcon from '@mui/icons-material/Search';
 import {
   Box,
@@ -9,203 +8,186 @@ import {
   Spacer,
   Text,
   Button,
-  Container,
   Input,
   Menu,
   MenuButton,
   MenuList,
-  Link,
-  useBreakpointValue ,
   MenuItem,
-  baseTheme,
+  useBreakpointValue,
+  useDisclosure,
+  Avatar,
 } from '@chakra-ui/react';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useContext} from 'react';
 import { AppState } from './App';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// import CustomLink from './Link';
-import {Link as RLink} from 'react-router-dom'
-import { ChevronDownIcon,HamburgerIcon } from '@chakra-ui/icons';
+import { Link as RLink } from 'react-router-dom';
+import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "./Navbar.css" 
+import './Navbar.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 const Navbar = () => {
   const history = useNavigate();
-  const login = useContext(AppState).login;
-  const name = useContext(AppState).name;
-  const user = useContext(AppState).user;
-  const loggedIn = useContext(AppState).loggedIn;
-  const { cart } = useContext(AppState);
-  const [log,setLog] = useState(login);
+  const { login, name, user, userdetails, loggedIn, cart } = useContext(AppState);
   const [isSticky, setSticky] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-      }
+      setSticky(window.scrollY > 50);
     };
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  useEffect(()=>{
-    setLog(login);
-  },[login]);
-  async function logout(){
-      try{
-        const sendCart = await axios.post("https://shoeping.onrender.com/cart/addcart",{cart,UserId:user,name});
-        // console.log("Sent cart");
-        if(sendCart){
-          window.alert("Cart Added");
-        }
-      }catch(e){
-        // console.log(e)
-      }
-      loggedIn(false,'','',{});
-      toast.info("You've been Logged Out!",{theme:"dark",autoClose:2000,position:"top-center"})
-      document.title=`Shoeping`;
-      history("/")
-  }
+
+  const handleLogout = async () => {
+    try {
+      await axios.post('https://shoeping.onrender.com/cart/addcart', { cart, UserId: user, name });
+      toast.info("You've been Logged Out!", { theme: 'dark', autoClose: 2000, position: 'top-center' });
+      loggedIn(false, '', {}, {});
+      history('/');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <Box h='12vh' bg="gray.800" py={3} className={`navbar ${isSticky ? 'sticky' : ''}`}>
-      <Flex
-        align="center"
-        className='flx'
-        direction={{ md: 'row' }}
-      >
-      <RLink to={''} ><img className='logo' src={logo}/></RLink>
-      <Spacer className='space' style={{maxWidth:"1vw"}} />
-      <Link as="RLink" className="link" display={{ base: 'none',md: 'block' }} color="whatsapp.100" ml={2} mr={2}>
-          <RLink className="link" to={''}>
-            Home
-          </RLink>
-        </Link>
-        <Link as="RLink" className="link" display={{ base: 'none', md: 'block' }} color="whatsapp.100" ml={2} mr={2}>
-          <RLink className="link" to={'#about'}>
-            About
-          </RLink>
-        </Link>
-        <div className="menu" display={{ base: 'none', md: 'block' }}>
-          <Menu className="menu">
-            <MenuButton
-              colorScheme="teal"
-              color="whatsapp.100"
-              variant="link"
-              className="menu-button"
-              ml={2} mr={2}
-              style={{ display: "flex", flexDirection: 'row' }}
-            >
-              <span style={{ display: 'flex', flexDirection: 'row' }}>
-                <p> Categories </p>
-                <p><ChevronDownIcon className='dropdown' /></p>
-              </span>
+    <Box
+      as="nav"
+      position="fixed"
+      top={0}
+      className="mb-28"
+      bg={ 'gray.50' }
+      w={'100vw'}
+      boxShadow={isSticky ? 'md' : 'none'}
+      p={4}
+      zIndex={1000}
+    >
+      <Flex align="center" justify="space-between" wrap="wrap">
+        <RLink to="/">
+          <img src={logo} alt="Shoeping Logo" className="logo" />
+        </RLink>
+        <Spacer />
+        <Flex
+          display={{ base: 'none', md: 'flex' }}
+          align="center"
+          gap={4}
+          color={'black'}
+          style={{color:'black'}}
+        >
+          <RLink to="/" className="nav-link" style={{color:'black'}}>Home</RLink>
+          <RLink to="#about" className="nav-link" style={{color:'black'}}>About</RLink>
+          <Menu>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} colorScheme="transparent" color="black" className="nav-link">
+              Categories
             </MenuButton>
-            <MenuList bg="whatsapp.100" color="black" border="1px solid #e2e8f0">
-              {/* ... (menu items) */}
-              <RLink className='menu' to={'footwear'}><MenuItem bg="whatsapp.100" color="black" >FootWear</MenuItem></RLink>
-              <RLink className='menu' to={'phone'}><MenuItem bg="whatsapp.100" color="black" >Electronics</MenuItem></RLink>
-              <RLink className='menu' to={'shirt'}><MenuItem bg="whatsapp.100" color="black" >Clothing</MenuItem></RLink>
-              <RLink className='menu' to={'grooming'}><MenuItem bg="whatsapp.100" color="black" >Grooming</MenuItem></RLink>
+            <MenuList bg="gray.100" color="black">
+              <RLink to="footwear" style={{color:'black'}} className="menu-item">
+                <MenuItem>Footwear</MenuItem>
+              </RLink>
+              <RLink to="phone" style={{color:'black'}} className="menu-item">
+                <MenuItem>Electronics</MenuItem>
+              </RLink>
+              <RLink to="shirt" style={{color:'black'}} className="menu-item">
+                <MenuItem>Clothing</MenuItem>
+              </RLink>
+              <RLink to="grooming" style={{color:'black'}} className="menu-item">
+                <MenuItem>Grooming</MenuItem>
+              </RLink>
             </MenuList>
           </Menu>
-        </div>
-      <Link as="RLink" className="link" display={{ base: 'none', md: 'block' }} color="whatsapp.100" ml={2} mr={2}>
-          <RLink className="link" to={''}>
-            Services
-          </RLink>
-        </Link>
-        
-
-        {/* <ListIcon  className={"list-icon"} /> */}
-        {/* <div className='space2'><Spacer  display={{ base: 'none', md: 'block' }} /></div> */}
-
-      < >
-      {/* <span className="search"> */}
-      <div className={'search'} display={{ base: 'none', md: 'flex' }} centerContent>
-          <Input type="text" placeholder="Search..." mt='3' />
-          <Button className={'searchIcon'} colorScheme="yellow" size={windowWidth>=768?28:30} h={windowWidth>=768?10:12} ml={'1.5'}  mt='3'>
-            <SearchIcon/>
-          </Button>
-          </div>
-      </>
-        
-      {log?(<><p style={{fontSize:{windowWidth}>=768?'25px':'10px', marginRight:"10px"}} className='welcome'>{windowWidth>768?"Welcome":""} {name}</p> 
-      <RLink to={'cart'}>
-        {/* <ShoppingCartIcon style={{color:"white",minWidth:"4vw",minHeight:"6vh",marginRight:"1vw"}}/> */}
-        <div style={{ position: 'relative', marginRight:"1vw",display:{windowWidth}<=540&&"none"}}>
-        {/* <ShoppingCartIcon style={{color:"white",width:"2vw",height:"6vh"}}/> */}
-      <FaShoppingCart style={{
-            marginLeft:{windowWidth}<768?"0.5vw":"0vw"}} size={30} className='cart'  />
-      {cart.length > 0 && (
-        <span
-          style={{
-            position: 'absolute',
-            top: {windowWidth}>768?"-0.6vh":"-0.7vh",
-            fontSize:{windowWidth}<768?"2vw":"10px",
-            right: {windowWidth}>768?"-1vh":"-0.5vh",
-            height: cart.length > 9 ? "2.4vh" : "2.3vh",
-            width: cart.length > 9 ? "1.5vw" : "1.1vw",
-            display:"flex",
-            fontWeight:{windowWidth}>768?"bold":"normal",
-            justfyContent:"center",
-            alignItems:"center",
-            background: 'red',
-            borderRadius: '100%',
-            padding:{windowWidth}<768?"0vh 0.6vh":"0 0.8vh",
-            paddingBottom:{windowWidth}>768?"0.3vh":"",
-            color: 'white',
-          }}
-        >
-          {cart.length}
-        </span>
-      )}
-    </div>
-        </RLink>
-      <RLink to={'profile'} style={{marginRight:"0.5vw",marginLeft:{windowWidth}<768?"6vw":"1vw"}}>
-        <Button className='sign' colorScheme="teal" variant="solid" minWidth={6} ml={2}>
-        <AccountCircleIcon style={{marginRight:"0.25rem"}}/>
-        {windowWidth>768?"Profile":""}
-        </Button></RLink></>):(<div className='log'><RLink to={'login'} style={{marginRight:"1vw"}}>
-        <Button className='sign' colorScheme="teal" variant="solid" style={{minWidth:"6vw"}}>
-          Login
-        </Button>
-      </RLink>
-      <RLink to={'register'}>
-        <Button className='sign' colorScheme='teal' variant="solid" style={{minWidth:"6vw"}}>
-          Signup
-        </Button>
-      </RLink></div>)}
-      {windowWidth < 768 ? (
-          <Menu>  
-          <MenuButton >
-            <HamburgerIcon color='white' boxSize={6} ml={4}  />
-          </MenuButton>
-          <MenuList bg="whatsapp.100" color="black" border="1px solid #e2e8f0">
-            {/* ... (menu items) */}
-            <RLink className='menu' to={''}><MenuItem  color="black" >Home</MenuItem></RLink>
-            <RLink className='menu' to={'about'}><MenuItem  color="black" >About</MenuItem></RLink>
-            <RLink className='menu' to={'service'}><MenuItem  color="black" >Service</MenuItem></RLink>
-            <RLink className='menu' to={'profile'}><MenuItem color="black" >Profile</MenuItem></RLink>
-          </MenuList>
-        </Menu>
-        ):<></>}
-    </Flex>
-  </Box>
-);
+          <RLink to="/services" className="nav-link"  style={{color:'black'}}>Services</RLink>
+          <Flex align="center" style={{display:'flex', alignItems: 'center'}} justify="center" className="flex justify-center items-center">
+            <Input placeholder="Search..." display={{ base: 'none', md: 'block' }} />
+            <Button ml={2} colorScheme="yellow" size="md">
+              <SearchIcon />
+            </Button>
+          </Flex>
+          {login ? (
+            <Flex align="center">
+              {/* <Text display={'flex'} alignItems={'center'} gap={1} fontSize={{ base: 'sm', md: 'lg' }} mr={2}><Avatar size={'sm'} name={name} src={user.picture}/>{name}</Text> */}
+              <RLink to="/cart">
+                <div style={{ position: 'relative', marginRight: '1vw' }}>
+                  <FaShoppingCart color='black' size={30} className="cart-icon" />
+                  {cart.length > 0 && (
+                    <span className="cart-badge">{cart.length}</span>
+                  )}
+                </div>
+              </RLink>
+              {console.log(user)}
+              <RLink to="/profile">
+                <Button colorScheme="yellow" variant="solid" paddingY={2} >
+                  {windowWidth > 768 ? <Text display={'flex'} alignItems={'center'} gap={1} fontSize={{ base: 'sm', md: 'lg' }} mr={2}><Avatar size={'sm'} name={name} src={userdetails.picture}/>{name}</Text> : <Avatar size={'sm'} name={name} src={userdetails.picture}/>}
+                </Button>
+              </RLink>
+              <Button colorScheme="teal" variant="solid" ml={2} onClick={handleLogout}>
+                Logout
+              </Button>
+            </Flex>
+          ) : (
+            <Flex align="center">
+              <RLink to="/login">
+                <Button colorScheme="teal" variant="solid">Login</Button>
+              </RLink>
+              <RLink to="/register">
+                <Button colorScheme="teal" variant="solid" ml={2}>Signup</Button>
+              </RLink>
+            </Flex>
+          )}
+        </Flex>
+        <Flex display={{ base: 'flex', md: 'none' }} sx={{color:'white'}}>
+          <Menu isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
+            <MenuButton as={Button} colorScheme="teal" variant="outline" rightIcon={<HamburgerIcon />}>
+              Menu
+            </MenuButton>
+            <MenuList bg="gray.100" color="black">
+              <RLink to="/"><MenuItem>Home</MenuItem></RLink>
+              <RLink to="#about"> <MenuItem>About</MenuItem></RLink>
+              <RLink to="/services" ><MenuItem>Services</MenuItem></RLink>
+              {login&&<RLink to="/profile" ><MenuItem><Text display={'flex'} alignItems={'center'} gap={1} fontSize={{ base: 'sm', md: 'lg' }} mr={2}>{name}<Avatar size={'sm'} name={name} src={userdetails.picture}/></Text></MenuItem></RLink>}
+              <Menu>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} colorScheme="transparent" color="black" className="nav-link">
+              Categories
+            </MenuButton>
+            <MenuList bg="gray.100" color="black">
+              <RLink to="footwear" style={{color:'black'}} className="menu-item">
+                <MenuItem>Footwear</MenuItem>
+              </RLink>
+              <RLink to="phone" style={{color:'black'}} className="menu-item">
+                <MenuItem>Electronics</MenuItem>
+              </RLink>
+              <RLink to="shirt" style={{color:'black'}} className="menu-item">
+                <MenuItem>Clothing</MenuItem>
+              </RLink>
+              <RLink to="grooming" style={{color:'black'}} className="menu-item">
+                <MenuItem>Grooming</MenuItem>
+              </RLink>
+            </MenuList>
+          </Menu>
+          <MenuList>{!login&&<><RLink to="/login">
+                <Button colorScheme="teal" variant="solid">Login</Button>
+              </RLink>
+              <RLink to="/register">
+                <Button colorScheme="teal" variant="solid" ml={2}>Signup</Button>
+              </RLink></>}</MenuList>
+            </MenuList>
+          </Menu>
+        </Flex>
+      </Flex>
+      <ToastContainer />
+    </Box>
+  );
 };
-
 
 export default Navbar;

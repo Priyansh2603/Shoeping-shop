@@ -1,6 +1,6 @@
 import { Button, VStack, Image, Text, Box } from '@chakra-ui/react';
 import React,{useContext,useState} from 'react';
-import {AppState} from './App.js'
+import {AppState} from '../App.js'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate,Link } from 'react-router-dom';
@@ -27,7 +27,6 @@ export default function ShowCart({item,type,amount,img,model,Item_id,brand,ratin
   return (<>
   
     <Box
-    className="mt-40"
       borderWidth="1px"
       borderRadius="md" 
       borderColor="gray.300"

@@ -1,13 +1,13 @@
 import React from 'react';
-import { Box, VStack, Text, SimpleGrid } from '@chakra-ui/react';
+import { Box,VStack,Text,SimpleGrid } from '@chakra-ui/react';
 import { Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Carousel from './CarouselComponent';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import HeroSection from './HeroSection';
 import AboutSection from './About';
 import Testimonial from './Testimonial';
-import Categories from './Categories';
-import Products from './Product';
+import Carousel2 from './Carousel';
+import Hero from './Hero';
 
 const testimonials = [
   {
@@ -54,32 +54,28 @@ const Home = ({ checkoutHandler }) => {
   const theme = createTheme();
   return (
     <>
-      <Box className="mt-40 scrollbar-hidden" bg="transparent">
-        <ChakraProvider theme={newtheme}>
-        <HeroSection 
-  title="Step into Style with Shoeping" 
-  subtitle="From trendsetting footwear to must-have apparel and grooming essentials, explore our curated collections and exclusive offers. Elevate your wardrobe with the finest picks, tailored just for you. Thank you for choosing Shoeping, where every step is a statement!" 
-/>
-
-        </ChakraProvider>
-        <Products/>
-        <Categories/>
-        <Carousel />
-        <ChakraProvider theme={newtheme}>
-          <Box id="about">
-            <AboutSection />
-          </Box>
-        </ChakraProvider>
-        <Box centerContent mt={8}>
-          <VStack spacing={4}>
-            {/* <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }}  spacing={6} p={6}>
+        <Box  bg="transparent">
+          <ChakraProvider theme={newtheme}>
+          {/* <HeroSection  title="Hello! We are Shoeping" subtitle="Are you looking for Footwears, Clothing, Groomings, exploring new arrivals, or enjoying exclusive deals, we have something for everyone. Thank you for choosing Shoeping for your online shopping needs!" /> */}
+          <Hero/>
+          <Box ><Carousel/></Box>
+    </ChakraProvider>
+          {/* <Carousel2/> */}
+          <ChakraProvider theme={newtheme}>
+            <Box id="about">
+            <AboutSection/>
+            </Box>
+          </ChakraProvider>
+      <Box centerContent mt={8}>
+        <VStack spacing={4}>
+      {/* <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }}  spacing={6} p={6}>
           {testimonials.map((testimonial, index) => (
             <Testimonial key={index} {...testimonial} />
           ))}
         </SimpleGrid> */}
-          </VStack>
-        </Box>
+        </VStack>
       </Box>
+    </Box>
     </>
   );
 };

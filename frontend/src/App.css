@@ -8,6 +8,15 @@
     transform: scale(1.05) 
 } 
 /* Navbar.css */
+/* Add this CSS to your global stylesheet */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 .link {
     text-decoration: none;

@@ -17,7 +17,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import {useContext} from 'react'
-import {AppState} from './App'
+import {AppState} from '../App'
 import { useToast } from '@chakra-ui/react';
 import { Spinner } from '@chakra-ui/react';
 import Cookies from 'js-cookie';
@@ -84,7 +84,7 @@ const toaster = useToast();
   async function submit(e) {
     e.preventDefault();
     try {
-      const response = await axios.post("https://shoeping.onrender.com/auth/register", {
+      const response = await axios.post("http://localhost:8000/auth/register", {
         name, lastname, email, password, picture, gender, age, interests
       });
       console.log(response.data);
@@ -102,13 +102,13 @@ const toaster = useToast();
         toast.success(`Registered Successfully! as ${name}`,{theme:"dark",autoClose:2000,position:"top-center"});
       }
     } catch (error) {
-      toast.error("Wrong Details",{theme:"dark",autoClose:2000,position:"top-center"});
+      toast.error("Error Registering!",{theme:"dark",autoClose:2000,position:"top-center"});
       console.error(error);
     }
   }
 
   return (
-    <div className="mt-40">
+    <>
       <ToastContainer />
       <ThemeProvider theme={theme} style={{marginTop:"5vh"}}>
         <Container component="main" maxWidth="xs">
@@ -250,6 +250,6 @@ const toaster = useToast();
           </Box>
         </Container>
       </ThemeProvider>
-    </div>
+    </>
   );
 }

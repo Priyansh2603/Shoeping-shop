@@ -153,12 +153,12 @@ function App() {
     razor.open()
     }
   return (
-    <>
+    <div className='mt-40 scrollbar-hidden'>
     <AppState.Provider value={{login,setItem, loggedIn,userdetails,checkoutHandler, logout,user, name,setUser,setName,cart,setCart,addingCart,removeCartItem}}>
      <Router>
       <ToastContainer/>
     <div style={{display:"absolute"}}><Navbar style={{display:"sticky"}}/></div>
-    <div className="App" style={{alignItems : "center", justifyContent: "center",}}>
+    <div className="App mt-40 scrollbar-hidden" style={{alignItems : "center", justifyContent: "center",marginTop:'4.5rem'}}>
       <Routes>
         <Route path="/" element={<Home checkoutHandler= {checkoutHandler}/>} />
         <Route path="/shirt" element = {<Shirt checkoutHandler = {checkoutHandler}/>}/>
@@ -180,7 +180,7 @@ function App() {
     </div>
      </Router>
      </AppState.Provider>
-    </>
+    </div>
   );
 }
 export {AppState};

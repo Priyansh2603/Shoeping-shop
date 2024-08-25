@@ -6,14 +6,14 @@ import Navbar from './Navbar';
 
 export default function Shirt({ checkoutHandler }) {
   return (
-    <div className="mt-40" style={{paddingTop:'6.4rem'}}>
+    <div>
       {/* <Navbar /> */}
-      <VStack h="11vh" justifyContent="center" position="fixed" minWidth="100vw" zIndex='500'  alignItems="center" marginTop="-20" backgroundColor="gray.900" >
-        <Text textColor="gray.50" textTransform="uppercase" fontSize="25px" fontWeight="bold">
+      <VStack h="10vh" justifyContent="center" alignItems="center" backgroundColor="whatsapp.500" >
+        <Text textColor="blackAlpha" textTransform="uppercase" fontSize="25px" fontWeight="bold">
           House of Fashion!
         </Text>
       </VStack>
-      <SimpleGrid columns={{base:2,sm: 3, md: 3, lg: 4, xl: 5 }} backgroundColor="gray.100"  spacing={6} p={7} py={10}>
+      <SimpleGrid columns={{ sm: 3, md: 2, lg: 5 }} bg="whatsapp.100" spacing={6} p={6}>
         {shirt.map((element) => (
           <Card
             key={element.id}

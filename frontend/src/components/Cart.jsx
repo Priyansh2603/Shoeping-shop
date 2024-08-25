@@ -1,5 +1,5 @@
 import React,{useContext, useEffect,useState} from 'react'
-import {AppState} from './App.js'
+import {AppState} from '../App.js'
 import { SimpleGrid,Text,VStack,Button } from '@chakra-ui/react';
 import ShowCart from './ShowCart.jsx';
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,7 +20,7 @@ export default function Cart({}) {
         const totalAmount = cart.reduce((total, item) => total + item.price, 0);
         setTotal(totalAmount);
     },[cart])
-  return (<div className="mt-40">
+  return (<>
   <ToastContainer/>
   <VStack h="10vh" justifyContent="center" alignItems="center" backgroundColor="whatsapp.500" >
     <Text textColor="blackAlpha" textTransform="uppercase" fontSize="25px" fontWeight="bold">
@@ -65,6 +65,6 @@ export default function Cart({}) {
           </Button>
         </div>):(<></>)
       }
-      </div>
+      </>
   )
 }

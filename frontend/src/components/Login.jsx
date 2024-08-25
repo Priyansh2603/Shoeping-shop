@@ -19,7 +19,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import Home from './Home';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AppState } from './App';
+import { AppState } from '../App';
 // import bcrypt from 'bcrypt';
 function Copyright(props) {
   return (
@@ -45,7 +45,7 @@ export default function Login() {
     e.preventDefault();
     // console.log(email,password);
     try{
-        const res = await axios.post("https://shoeping2.onrender.com/auth/login", {
+        const res = await axios.post("http://localhost:8000/auth/login", {
            email, password,
           });
           if (res.data.email===email) {
@@ -71,7 +71,7 @@ export default function Login() {
         toast.error("Login Error!",{theme:"dark",autoClose:2000,position:"top-center"})
     }
   }
-  return (<div className="mt-40">
+  return (<>
   <ToastContainer></ToastContainer>
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -169,6 +169,6 @@ export default function Login() {
         </Box>
       </Container>
         </ThemeProvider>
-        </div>
+        </>
   )
 }

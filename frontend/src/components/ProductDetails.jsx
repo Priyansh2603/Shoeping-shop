@@ -100,7 +100,7 @@ const ProductDetails = ({ product }) => {
   });
   return (
     <ThemeProvider theme={theme}>
-      <StyledCard className="mt-40">
+      <StyledCard>
         <CardContent>
           <button onClick={goBack}  style={{color:'black'}}><ArrowBackIcon/></button>
           <Grid container spacing={3}>
