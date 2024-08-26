@@ -1,13 +1,13 @@
 import React from 'react';
 
 const categories = [
-  { id: 1, name: 'Footwear', image: 'https://example.com/footwear.jpg' },
-  { id: 2, name: 'Clothing', image: 'https://example.com/clothing.jpg' },
-  { id: 3, name: 'Grooming', image: 'https://example.com/grooming.jpg' },
-  { id: 4, name: 'Accessories', image: 'https://example.com/accessories.jpg' },
-  { id: 5, name: 'Electronics', image: 'https://example.com/electronics.jpg' },
-  { id: 6, name: 'Home & Kitchen', image: 'https://example.com/home-kitchen.jpg' },
-  { id: 7, name: 'Sports', image: 'https://example.com/sports.jpg' },
+  { id: 1, name: 'Footwear', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3GYmlCFqLXVJwbXI3Xme2F1jJN-QC6I_sRzEEQzL-dmwVw_pycDFmAl4sFpe7duPGw4Y&usqp=CAU' },
+  { id: 2, name: 'Clothing', image: 'https://assets-global.website-files.com/5d6fe845a10b7881ddcc9c9c/635639544d0d414c0bad916d_Picture15.png' },
+  { id: 3, name: 'Grooming', image: 'https://www.bookeventz.com/blog-old/wp-content/uploads/2021/03/Grooming-Products.jpg' },
+  { id: 4, name: 'Accessories', image: 'https://assets.architecturaldigest.in/photos/6045cf4607b8c2a9c90a31cc/16:9/w_2560%2Cc_limit/modular-kitchen-accessories-design-interiors.jpg' },
+  { id: 5, name: 'Electronics', image: 'https://images.herzindagi.info/image/2020/Apr/Electronics.jpg' },
+  { id: 6, name: 'Home & Kitchen', image: 'https://api.gharpedia.com/wp-content/uploads/2018/12/Modular-kitchen-Accessories-01-0504140002.jpg' },
+  { id: 7, name: 'Sports', image: 'https://5.imimg.com/data5/SELLER/Default/2023/12/368539112/VE/XJ/GB/3333530/sports-kit.jpg' },
 ];
 
 const Categories = () => {

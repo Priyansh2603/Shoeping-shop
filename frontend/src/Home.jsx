@@ -62,8 +62,8 @@ const Home = ({ checkoutHandler }) => {
 />
 
         </ChakraProvider>
-        <Products/>
         <Categories/>
+        <Products/>
         <Carousel />
         <ChakraProvider theme={newtheme}>
           <Box id="about">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import logo from './img/shoeping-logo.png';
+import logo from './img/shoeping-logo.png'
 import SearchIcon from '@mui/icons-material/Search';
 import {
   Box,
@@ -78,7 +78,7 @@ const Navbar = () => {
         <RLink to="/">
           <img src={logo} alt="Shoeping Logo" className="logo" />
         </RLink>
-        <Spacer />
+        {/* <Spacer /> */}
         <Flex
           display={{ base: 'none', md: 'flex' }}
           align="center"
