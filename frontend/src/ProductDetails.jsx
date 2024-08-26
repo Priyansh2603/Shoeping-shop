@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import StarRateIcon from '@mui/icons-material/StarRate';
 const theme = createTheme({
   // Define your theme properties here
-  background: '#ffffff',
+  backgroundColor: 'black',
 });
 
 const StyledCard = styled(Card)({
@@ -19,7 +19,7 @@ const StyledImageContainer = styled('div')({
   position: 'relative',
   overflow: 'hidden',
   '&:hover img': {
-    transform: 'scale(20)', // Zoom effect on hover
+    transform: 'scale(1.5)', // Zoom effect on hover
     transition: 'transform 0.3s ease-in-out',
     zIndex: 1,
   },
@@ -100,7 +100,7 @@ const ProductDetails = ({ product }) => {
   });
   return (
     <ThemeProvider theme={theme}>
-      <StyledCard className="mt-40">
+      <StyledCard className="mt-40" style={{marginTop:'9rem', shadow:'20rem'}}>
         <CardContent>
           <button onClick={goBack}  style={{color:'black'}}><ArrowBackIcon/></button>
           <Grid container spacing={3}>

@@ -8,6 +8,9 @@ import AboutSection from './About';
 import Testimonial from './Testimonial';
 import Categories from './Categories';
 import Products from './Product';
+import Footer from './Footer';
+import OurMissionSection from './OurMission';
+import MeetTheFounderSection from './MeetDev';
 
 const testimonials = [
   {
@@ -53,34 +56,25 @@ const Home = ({ checkoutHandler }) => {
 
   const theme = createTheme();
   return (
-    <>
+    <div className='scrollbar-hidden'>
       <Box className="mt-40 scrollbar-hidden" bg="transparent">
+        <Carousel /><Categories />
         <ChakraProvider theme={newtheme}>
-        <HeroSection 
-  title="Step into Style with Shoeping" 
-  subtitle="From trendsetting footwear to must-have apparel and grooming essentials, explore our curated collections and exclusive offers. Elevate your wardrobe with the finest picks, tailored just for you. Thank you for choosing Shoeping, where every step is a statement!" 
-/>
-
+          <HeroSection
+            title="Step into Style with Shoeping"
+            subtitle="From trendsetting footwear to must-have apparel and grooming essentials, explore our curated collections and exclusive offers. Elevate your wardrobe with the finest picks, tailored just for you. Thank you for choosing Shoeping, where every step is a statement!"
+          />
         </ChakraProvider>
-        <Categories/>
-        <Products/>
-        <Carousel />
+        <Products />
         <ChakraProvider theme={newtheme}>
           <Box id="about">
             <AboutSection />
           </Box>
         </ChakraProvider>
-        <Box centerContent mt={8}>
-          <VStack spacing={4}>
-            {/* <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }}  spacing={6} p={6}>
-          {testimonials.map((testimonial, index) => (
-            <Testimonial key={index} {...testimonial} />
-          ))}
-        </SimpleGrid> */}
-          </VStack>
-        </Box>
+        <MeetTheFounderSection/>
+        <Footer />
       </Box>
-    </>
+    </div>
   );
 };
 

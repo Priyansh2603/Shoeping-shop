@@ -153,7 +153,7 @@ function App() {
     razor.open()
     }
   return (
-    <div className='mt-40 scrollbar-hidden'>
+    <div className='mt-40 scrollbar-hidden' >
     <AppState.Provider value={{login,setItem, loggedIn,userdetails,checkoutHandler, logout,user, name,setUser,setName,cart,setCart,addingCart,removeCartItem}}>
      <Router>
       <ToastContainer/>

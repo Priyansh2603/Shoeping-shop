@@ -21,7 +21,7 @@ const slides = [
     id: 3, 
     image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1794&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
     alt: 'Time Saving', 
-    headline: "Your Time is Precious—We Get It", 
+    headline: "Your Time is Precious, We Get It", 
     subtext: "Get what you need quickly with our fast and reliable service." 
   },
 ];

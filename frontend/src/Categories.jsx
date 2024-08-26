@@ -17,7 +17,7 @@ const Categories = () => {
   };
 
   const headerStyle = {
-    fontSize: '2.5rem',
+    fontSize: '2rem',
     fontWeight: '700',
     color: '#333333',
     textAlign: 'center',

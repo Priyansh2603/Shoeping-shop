@@ -2,14 +2,57 @@ import { display } from '@mui/system';
 import React from 'react';
 
 const products = [
-  { id: 1, name: 'Running Shoes', price: '$79.99', image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg', description: 'High-performance shoes for every run.' },
-  { id: 2, name: 'Leather Jacket', price: '$129.99', image: 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg', description: 'Stylish leather jacket for all occasions.' },
-  { id: 3, name: 'Beard Grooming Kit', price: '$39.99', image: 'https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:540/960885/n_4uDEVj1-960885_1.jpg', description: 'Everything you need for a perfect beard.' },
-  { id: 4, name: 'Designer Sunglasses', price: '$99.99', image: 'https://www.chanel.com/images/t_one/t_fashion9/b_rgb:F7F7F7,e_brightness:-3/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_840/square-sunglasses-black-acetate-acetate-packshot-default-a71224x02016s5018-8854308225054.jpg', description: 'Trendsetting sunglasses to elevate your style.' },
-  { id: 5, name: 'Designer Sunglasses', price: '$99.99', image: 'https://www.chanel.com/images/t_one/t_fashion9/b_rgb:F7F7F7,e_brightness:-3/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_840/square-sunglasses-black-acetate-acetate-packshot-default-a71224x02016s5018-8854308225054.jpg', description: 'Trendsetting sunglasses to elevate your style.' },
-  { id: 6, name: 'Designer Sunglasses', price: '$99.99', image: 'https://www.chanel.com/images/t_one/t_fashion9/b_rgb:F7F7F7,e_brightness:-3/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_840/square-sunglasses-black-acetate-acetate-packshot-default-a71224x02016s5018-8854308225054.jpg', description: 'Trendsetting sunglasses to elevate your style.' },
-  { id: 7, name: 'Designer Sunglasses', price: '$99.99', image: 'https://www.chanel.com/images/t_one/t_fashion9/b_rgb:F7F7F7,e_brightness:-3/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_840/square-sunglasses-black-acetate-acetate-packshot-default-a71224x02016s5018-8854308225054.jpg', description: 'Trendsetting sunglasses to elevate your style.' },
+  {
+    id: 1,
+    name: 'Running Shoes',
+    price: 'Rs. 79.99',
+    image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg',
+    description: 'High-performance shoes designed for comfort and speed.'
+  },
+  {
+    id: 2,
+    name: 'Leather Jacket',
+    price: 'Rs. 129.99',
+    image: 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg',
+    description: 'A classic leather jacket that blends style with durability.'
+  },
+  {
+    id: 3,
+    name: 'Beard Grooming Kit',
+    price: 'Rs. 39.99',
+    image: 'https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:540/960885/n_4uDEVj1-960885_1.jpg',
+    description: 'Complete kit for maintaining a well-groomed beard.'
+  },{
+    id: 7,
+    name: 'Leather Wallet',
+    price: 'Rs. 49.99',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQunsWd5kQktn7q9pQ9TJ775KKJFYEK7Qk7aA&s',
+    description: 'A sophisticated leather wallet with multiple card slots.'
+  },
+  {
+    id: 4,
+    name: 'Designer Sunglasses',
+    price: 'Rs. 99.99',
+    image: 'https://www.chanel.com/images/t_one/t_fashion9/b_rgb:F7F7F7,e_brightness:-3/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_840/square-sunglasses-black-acetate-acetate-packshot-default-a71224x02016s5018-8854308225054.jpg',
+    description: 'Elegantly crafted sunglasses to complement any outfit.'
+  },
+  {
+    id: 5,
+    name: 'Smartwatch',
+    price: 'Rs. 199.99',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHe1f1WbXmawpjkGdjtC9n6PLYJkFMG97wKVzEq30PMiWTtn_nqch5Ti1E-J7yFxrtw_4&usqp=CAU',
+    description: 'A sleek smartwatch with fitness tracking and notifications.'
+  },
+  {
+    id: 6,
+    name: 'Wireless Earbuds',
+    price: 'Rs. 59.99',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR32U3rDI_rTmTcGORe6i3dHyM6bsY-Dj-RUg&s',
+    description: 'High-quality wireless earbuds with noise cancellation.'
+  },
+  
 ];
+
 
 const Products = () => {
   const containerStyle = {

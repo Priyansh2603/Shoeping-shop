@@ -42,6 +42,7 @@ const Card = ({ item, amount, img, model, Item_id, checkoutHandler, type, name, 
       borderWidth="1px"
       borderRadius="xl"
       borderColor="gray.300"
+      onClick={handleShowItem}
       bg="white"
       boxShadow="2xl"
       transition="transform 0.3s ease, box-shadow 0.3s ease"
@@ -61,15 +62,21 @@ const Card = ({ item, amount, img, model, Item_id, checkoutHandler, type, name, 
     >
       {/* Badge for Rating */}
       {rating && (
-        <Badge
-          position="absolute"
-          top={2}
-          right={2}
-          colorScheme="teal"
-        >
-          {rating}★
-        </Badge>
-      )}
+  <Badge
+    position="absolute"
+    top={2}
+    right={2}
+    fontSize="md" // Increase font size
+    px={3} // Increase padding on the x-axis
+    py={1} // Increase padding on the y-axis
+    bg="gold" // Goldish background color
+    color="black" // Text color for contrast
+    borderRadius="full" // Optional: make the badge more circular
+  >
+    {rating}★
+  </Badge>
+)}
+
       
       {/* Image */}
       <Flex justify="center" mb={3}>
