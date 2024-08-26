@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import logo from './img/shoeping-logo.png'
+import logo from './shoeping-logo.png'
 import SearchIcon from '@mui/icons-material/Search';
 import {
   Box,
