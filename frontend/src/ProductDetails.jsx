@@ -2,19 +2,12 @@ import React,{useState} from 'react';
 import { Card, CardContent, Typography, Grid, createTheme, ThemeProvider } from '@mui/material';
 import { styled } from '@mui/system';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import StarRateIcon from '@mui/icons-material/StarRate';
 const theme = createTheme({
   // Define your theme properties here
   backgroundColor: 'black',
 });
-
-const StyledCard = styled(Card)({
-  maxWidth: 800,
-  margin: 'auto',
-  marginTop: 20,
-});
-
 const StyledImageContainer = styled('div')({
   position: 'relative',
   overflow: 'hidden',
@@ -80,12 +73,10 @@ const ProductDetails = ({ product }) => {
     amount,
     description,
     price,
-    img,
     discountPercentage,
     rating,
     items_left,
     stock,
-    imageURL,
     brand,
     category,
     thumbnail,

@@ -1,8 +1,7 @@
 import React from 'react';
 import shirt from './shirt.json';
-import { SimpleGrid,Text,VStack, Box, Button } from '@chakra-ui/react';
+import { SimpleGrid,Text, Box, Button } from '@chakra-ui/react';
 import Card from './Card';
-import Navbar from './Navbar';
 
 export default function Shirt({ checkoutHandler }) {
   return (
